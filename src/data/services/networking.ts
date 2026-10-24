@@ -213,7 +213,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
       'NLB supports a static IP address per AZ and preserves the client source IP; ALB does not provide a static IP',
       'GWLB is specifically for transparently routing traffic through third-party virtual network appliances',
     ],
-    relatedServices: ['ec2', 'vpc', 'auto-scaling', 'global-accelerator'],
+    relatedServices: ['ec2', 'vpc', 'ec2-auto-scaling', 'global-accelerator'],
     pricingModel: 'Pay hourly per load balancer, plus Load Balancer Capacity Units (LCU) based on processed traffic.',
     iconPath: '/icons/networking/elastic-load-balancing.svg',
   },
