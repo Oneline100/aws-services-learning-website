@@ -5,6 +5,8 @@ import { STORAGE_SERVICES } from './storage';
 import { DATABASE_SERVICES } from './database';
 import { NETWORKING_SERVICES } from './networking';
 import { SECURITY_SERVICES } from './security';
+import { ANALYTICS_SERVICES } from './analytics';
+import { ML_SERVICES } from './ml';
 
 export const ALL_SERVICES: AWSService[] = [
   ...COMPUTE_SERVICES,
@@ -13,6 +15,8 @@ export const ALL_SERVICES: AWSService[] = [
   ...DATABASE_SERVICES,
   ...NETWORKING_SERVICES,
   ...SECURITY_SERVICES,
+  ...ANALYTICS_SERVICES,
+  ...ML_SERVICES,
 ];
 
 export function getServiceById(id: string): AWSService | undefined {
