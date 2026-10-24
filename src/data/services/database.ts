@@ -51,7 +51,7 @@ export const DATABASE_SERVICES: AWSService[] = [
       'Choose on-demand capacity for unpredictable traffic and provisioned (with auto scaling) for predictable, steady workloads to save cost',
       'DAX adds a caching layer in front of DynamoDB; it is not the same as DynamoDB\'s native eventually/strongly consistent reads',
     ],
-    relatedServices: ['lambda', 'api-gateway', 'dynamodb-dax'],
+    relatedServices: ['lambda', 'api-gateway'],
     pricingModel: 'Pay per read/write request unit (on-demand) or provisioned capacity unit-hour, plus storage GB-month.',
     iconPath: '/icons/database/dynamodb.svg',
   },

@@ -24,7 +24,7 @@ export const STORAGE_SERVICES: AWSService[] = [
       'S3 Standard-IA and One Zone-IA trade availability/durability for lower cost — know the difference',
       'Glacier retrieval times range from minutes (Expedited) to hours (Bulk) — pick based on RTO needs',
     ],
-    relatedServices: ['cloudfront', 'glacier', 'athena'],
+    relatedServices: ['cloudfront', 's3-glacier', 'athena'],
     pricingModel: 'Pay per GB stored per month (varies by storage class), plus request and data transfer fees.',
     iconPath: '/icons/storage/s3.svg',
   },
