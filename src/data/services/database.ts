@@ -1,0 +1,328 @@
+import type { AWSService } from '../../types/service';
+
+export const DATABASE_SERVICES: AWSService[] = [
+  {
+    id: 'rds',
+    name: 'Amazon Relational Database Service (RDS)',
+    category: 'Database',
+    tagline: 'Fully managed relational databases across six popular engines.',
+    description:
+      'Amazon RDS automates provisioning, patching, backup, and failover for relational databases, supporting MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, and Amazon Aurora, so teams can run production-grade relational databases without managing the underlying infrastructure.',
+    keyFeatures: [
+      'Automated backups, point-in-time recovery, and manual snapshots',
+      'Multi-AZ deployments provide synchronous standby replicas for high availability and automatic failover',
+      'Read replicas (within or across Regions) offload read traffic and support disaster recovery',
+      'Automated patching and maintenance windows for the underlying engine and OS',
+    ],
+    useCases: [
+      'Traditional relational workloads (OLTP) migrated from on-premises databases',
+      'Web and enterprise applications needing ACID-compliant transactional storage',
+      'Read-heavy applications that benefit from offloading queries to read replicas',
+    ],
+    examNotes: [
+      'Multi-AZ is for high availability (synchronous standby, automatic failover) — it is not a read-scaling solution',
+      'Read replicas use asynchronous replication and can be promoted to standalone databases but are primarily for read scaling',
+      'RDS does not give OS-level access to the underlying instance, unlike running a database yourself on EC2',
+    ],
+    relatedServices: ['aurora', 'rds-proxy', 'dms'],
+    pricingModel: 'Pay per instance-hour (by instance class), storage GB-month, and I/O or backup storage as applicable.',
+    iconPath: '/icons/database/rds.svg',
+  },
+  {
+    id: 'dynamodb',
+    name: 'Amazon DynamoDB',
+    category: 'Database',
+    tagline: 'Fully managed, serverless key-value and document NoSQL database with single-digit millisecond latency.',
+    description:
+      'Amazon DynamoDB is a serverless NoSQL database that delivers consistent single-digit millisecond performance at any scale, automatically partitioning data across servers and offering both on-demand and provisioned capacity modes.',
+    keyFeatures: [
+      'Serverless, auto-scaling capacity with on-demand or provisioned throughput modes',
+      'Single-digit millisecond read/write latency at virtually unlimited scale',
+      'DynamoDB Accelerator (DAX) provides microsecond in-memory caching for read-heavy workloads',
+      'Global Tables replicate data across multiple Regions for low-latency global access and resiliency',
+    ],
+    useCases: [
+      'High-scale web, mobile, and gaming applications needing predictable low-latency access',
+      'Serverless application backends paired with Lambda and API Gateway',
+      'Session storage, shopping carts, and other key-value access patterns',
+    ],
+    examNotes: [
+      'DynamoDB is schemaless beyond the primary key — attributes can vary between items',
+      'Choose on-demand capacity for unpredictable traffic and provisioned (with auto scaling) for predictable, steady workloads to save cost',
+      'DAX adds a caching layer in front of DynamoDB; it is not the same as DynamoDB\'s native eventually/strongly consistent reads',
+    ],
+    relatedServices: ['lambda', 'api-gateway', 'dynamodb-dax'],
+    pricingModel: 'Pay per read/write request unit (on-demand) or provisioned capacity unit-hour, plus storage GB-month.',
+    iconPath: '/icons/database/dynamodb.svg',
+  },
+  {
+    id: 'aurora',
+    name: 'Amazon Aurora',
+    category: 'Database',
+    tagline: 'MySQL- and PostgreSQL-compatible relational database built for the cloud.',
+    description:
+      'Amazon Aurora is a relational database engine, wire-compatible with MySQL and PostgreSQL, that decouples storage from compute and replicates data six ways across three Availability Zones, delivering higher throughput and durability than standard RDS engines at comparable cost.',
+    keyFeatures: [
+      'Storage auto-scales up to 128 TiB and is replicated 6 ways across 3 AZs automatically',
+      'Up to 15 low-latency read replicas, versus 5 for standard MySQL/PostgreSQL on RDS',
+      'Aurora Serverless v2 scales compute capacity automatically based on load, down to near-zero',
+      'Aurora Global Database replicates across Regions with typically under 1 second lag for disaster recovery',
+    ],
+    useCases: [
+      'Applications needing MySQL/PostgreSQL compatibility with higher performance and availability than standard RDS',
+      'Globally distributed applications requiring fast cross-Region disaster recovery (Global Database)',
+      'Variable or unpredictable workloads that benefit from Aurora Serverless scaling to zero',
+    ],
+    examNotes: [
+      'Aurora claims up to 5x the throughput of standard MySQL and up to 3x that of standard PostgreSQL on the same hardware',
+      'Aurora is a specific RDS database engine choice, not a separate service from RDS in the console',
+      'Aurora Global Database enables cross-Region DR with sub-second typical replication lag, distinct from standard RDS cross-Region read replicas',
+    ],
+    relatedServices: ['rds', 'rds-proxy', 'lambda'],
+    pricingModel: 'Pay per instance-hour (or ACU-hour for Serverless v2) plus storage and I/O consumed.',
+    iconPath: '/icons/database/aurora.svg',
+  },
+  {
+    id: 'elasticache',
+    name: 'Amazon ElastiCache',
+    category: 'Database',
+    tagline: 'Fully managed in-memory caching with Redis and Memcached compatibility.',
+    description:
+      'Amazon ElastiCache deploys and manages Redis- or Memcached-compatible in-memory data stores, reducing latency and database load for read-heavy and compute-intensive applications by caching frequently accessed data.',
+    keyFeatures: [
+      'Supports both Redis OSS (and Valkey) and Memcached compatible engines',
+      'Redis mode supports replication, Multi-AZ automatic failover, and persistence (snapshots)',
+      'Memcached mode supports simple, multi-threaded caching with horizontal partitioning but no persistence or replication',
+      'Sub-millisecond latency for cached reads, significantly reducing load on backend databases',
+    ],
+    useCases: [
+      'Database query result caching to reduce read load on RDS/Aurora/DynamoDB',
+      'Session state storage for web applications requiring fast, shared session access',
+      'Real-time leaderboards, counters, and pub/sub messaging patterns (Redis)',
+    ],
+    examNotes: [
+      'Choose Redis when you need persistence, replication, complex data structures, or pub/sub; choose Memcached for simple, multi-threaded, non-persistent caching',
+      'ElastiCache is a cache layer in front of a primary data store — it is not a replacement for a durable database',
+      'Redis Multi-AZ with automatic failover is comparable in concept to RDS Multi-AZ, but for an in-memory store',
+    ],
+    relatedServices: ['rds', 'dynamodb', 'memorydb'],
+    pricingModel: 'Pay per node-hour based on node type, plus backup storage for Redis snapshots.',
+    iconPath: '/icons/database/elasticache.svg',
+  },
+  {
+    id: 'neptune',
+    name: 'Amazon Neptune',
+    category: 'Database',
+    tagline: 'Fully managed graph database for highly connected datasets.',
+    description:
+      'Amazon Neptune is a purpose-built, fully managed graph database optimized for storing and querying highly connected data, supporting both the Gremlin (property graph) and SPARQL (RDF) query languages, with millisecond-latency traversals across billions of relationships.',
+    keyFeatures: [
+      'Supports both property graph (Gremlin, openCypher) and RDF graph (SPARQL) models',
+      'Purpose-built storage and query engine optimized for traversing relationships efficiently',
+      'High availability via up to 15 read replicas and Multi-AZ automatic failover',
+      'Neptune Streams captures a continuous log of graph changes for downstream processing',
+    ],
+    useCases: [
+      'Social networking applications modeling relationships between users',
+      'Fraud detection and recommendation engines that rely on relationship traversal',
+      'Knowledge graphs and network/IT infrastructure topology modeling',
+    ],
+    examNotes: [
+      'Choose Neptune over a relational database when the dominant query pattern is traversing relationships (friend-of-a-friend, recommendation paths), not joins',
+      'Neptune supports both Gremlin/openCypher (property graph) and SPARQL (RDF) — know this distinguishes it from single-model graph databases',
+      'Exam scenarios mentioning "highly connected data," "relationships," or "fraud detection graphs" point to Neptune',
+    ],
+    relatedServices: ['rds', 'documentdb', 'dynamodb'],
+    pricingModel: 'Pay per instance-hour based on instance class, plus storage I/O and backup storage consumed.',
+    iconPath: '/icons/database/neptune.svg',
+  },
+  {
+    id: 'documentdb',
+    name: 'Amazon DocumentDB (with MongoDB compatibility)',
+    category: 'Database',
+    tagline: 'Fully managed document database compatible with MongoDB APIs.',
+    description:
+      'Amazon DocumentDB is a fully managed document database service that supports MongoDB workloads, letting teams use existing MongoDB drivers and tools while AWS manages provisioning, patching, backups, and scaling of the underlying cluster.',
+    keyFeatures: [
+      'Compatible with MongoDB 3.6/4.0/5.0 drivers, tools, and application code',
+      'Storage automatically scales in increments without downtime, decoupled from compute',
+      'Up to 15 low-latency read replicas sharing the same underlying storage volume',
+      'Multi-AZ deployments with automated failover typically completing within 30 seconds',
+    ],
+    useCases: [
+      'Migrating existing MongoDB workloads to a managed AWS service without rewriting application code',
+      'Content management, catalogs, and user profile stores using flexible JSON-like documents',
+      'Applications needing document-model flexibility with managed high availability',
+    ],
+    examNotes: [
+      'DocumentDB is MongoDB-*compatible*, not running actual MongoDB software — a frequent exam clarification point',
+      'Like Aurora, DocumentDB separates compute from a shared cluster storage volume for fast replica scaling',
+      'Choose DocumentDB for JSON document workloads vs. DynamoDB for key-value/wide-scale serverless NoSQL needs',
+    ],
+    relatedServices: ['dynamodb', 'rds', 'dms'],
+    pricingModel: 'Pay per instance-hour based on instance class, plus storage GB-month and I/O consumed.',
+    iconPath: '/icons/database/documentdb.svg',
+  },
+  {
+    id: 'keyspaces',
+    name: 'Amazon Keyspaces (for Apache Cassandra)',
+    category: 'Database',
+    tagline: 'Serverless, managed Cassandra-compatible database.',
+    description:
+      'Amazon Keyspaces is a scalable, serverless, managed database service compatible with Apache Cassandra, letting teams run Cassandra Query Language (CQL) workloads without provisioning, patching, or managing Cassandra clusters.',
+    keyFeatures: [
+      'Compatible with Cassandra Query Language (CQL) and existing Cassandra drivers',
+      'Serverless with on-demand or provisioned capacity modes, scaling automatically',
+      'Data encrypted at rest by default and replicated across multiple AZs for durability',
+      'Virtually unlimited throughput and storage per table, suited to large-scale workloads',
+    ],
+    useCases: [
+      'Migrating existing Apache Cassandra workloads to a managed AWS service',
+      'High-scale applications needing wide-column NoSQL storage with CQL compatibility',
+      'IoT, time-series-like, and device-state workloads with high write throughput',
+    ],
+    examNotes: [
+      'Keyspaces is to Cassandra what DocumentDB is to MongoDB — compatibility without managing the open-source engine yourself',
+      'Serverless scaling and on-demand capacity make Keyspaces a good fit when Cassandra operational overhead is the main migration driver',
+      'Supports the same CQL and drivers as Cassandra, minimizing application-level code changes',
+    ],
+    relatedServices: ['dynamodb', 'documentdb', 'dms'],
+    pricingModel: 'Pay per read/write request unit (on-demand or provisioned) plus storage GB-month.',
+    iconPath: '/icons/database/keyspaces.svg',
+  },
+  {
+    id: 'timestream',
+    name: 'Amazon Timestream',
+    category: 'Database',
+    tagline: 'Purpose-built, serverless time-series database.',
+    description:
+      'Amazon Timestream is a fast, scalable, serverless time-series database designed to store and analyze trillions of events per day, automatically managing the lifecycle of data by keeping recent data in memory and moving older data to cost-optimized storage.',
+    keyFeatures: [
+      'Automatic tiering: recent data in an in-memory store, historical data in a cost-optimized magnetic store',
+      'Purpose-built query engine with built-in time-series functions (interpolation, smoothing, aggregation)',
+      'Serverless — scales automatically with no infrastructure to provision or manage',
+      'Integrates with IoT, operational, and application monitoring data pipelines',
+    ],
+    useCases: [
+      'IoT sensor data and industrial telemetry storage and analysis',
+      'Application and infrastructure monitoring metrics at scale',
+      'DevOps and operational analytics requiring time-based trend analysis',
+    ],
+    examNotes: [
+      'Timestream is purpose-built for time-series data — exam scenarios mentioning "sensor data," "metrics over time," or "IoT telemetry" point here',
+      'Automatic data tiering (memory to magnetic store) distinguishes it from manually managing lifecycle policies yourself',
+      'Not a general-purpose relational or NoSQL store — it is optimized specifically for timestamped data patterns',
+    ],
+    relatedServices: ['iot-core', 'dynamodb', 'rds'],
+    pricingModel: 'Pay per GB of data written, memory store GB-hour, magnetic store GB-month, and queries processed.',
+    iconPath: '/icons/database/timestream.svg',
+  },
+  {
+    id: 'qldb',
+    name: 'Amazon Quantum Ledger Database (QLDB)',
+    category: 'Database',
+    tagline: 'Fully managed ledger database with an immutable, cryptographically verifiable transaction log.',
+    description:
+      'Amazon QLDB provides a transparent, immutable, and cryptographically verifiable transaction log, maintained by a central trusted authority, for applications that need a complete and verifiable history of every data change over time.',
+    keyFeatures: [
+      'Append-only journal records every change, providing a complete and immutable history',
+      'Cryptographic verification lets applications prove data integrity has not been altered',
+      'SQL-like query language (PartiQL) with built-in history() function to query past data states',
+      'Fully managed and serverless — scales automatically without infrastructure management',
+    ],
+    useCases: [
+      'Financial transaction and audit-trail systems requiring tamper-evident records',
+      'Supply chain tracking needing a verifiable history of ownership or state changes',
+      'Systems of record where regulatory or compliance needs demand provable data history',
+    ],
+    examNotes: [
+      'QLDB is centrally managed by AWS (a trusted authority), unlike a blockchain network which is decentralized — a common exam distinction',
+      'Choose QLDB over a standard relational database when the requirement explicitly calls for an immutable, cryptographically verifiable audit trail',
+      'Distinct from Amazon Managed Blockchain, which is for decentralized multi-party ledger networks',
+    ],
+    relatedServices: ['dynamodb', 'rds', 'managed-blockchain'],
+    pricingModel: 'Pay per million I/O requests, journal storage GB-month, and indexed storage GB-month.',
+    iconPath: '/icons/database/qldb.svg',
+  },
+  {
+    id: 'dms',
+    name: 'AWS Database Migration Service (DMS)',
+    category: 'Database',
+    tagline: 'Migrate databases to AWS quickly and securely with minimal downtime.',
+    description:
+      'AWS Database Migration Service (DMS) migrates relational databases, data warehouses, and NoSQL databases to AWS, supporting both homogeneous migrations (same engine) and heterogeneous migrations (different engines, via the AWS Schema Conversion Tool), with the source database remaining fully operational during migration.',
+    keyFeatures: [
+      'Continuous data replication keeps the source database operational with minimal downtime during migration',
+      'Supports homogeneous (e.g., MySQL to MySQL) and heterogeneous (e.g., Oracle to Aurora) migrations',
+      'AWS Schema Conversion Tool (SCT) converts source schema and code for heterogeneous migrations',
+      'Can also be used for ongoing continuous replication, not just one-time migration',
+    ],
+    useCases: [
+      'Migrating on-premises or other-cloud databases into RDS, Aurora, Redshift, or DynamoDB',
+      'Consolidating multiple database engines into a standardized AWS-hosted engine',
+      'Continuous data replication for analytics or disaster recovery outside of pure migration',
+    ],
+    examNotes: [
+      'DMS handles the data migration; the Schema Conversion Tool (SCT) handles converting schema/code for heterogeneous engine changes — know both are typically used together for cross-engine migrations',
+      'The source database stays available and operational throughout most of the migration, minimizing downtime',
+      'DMS is the go-to exam answer for "migrate database to AWS with minimal downtime" scenarios',
+    ],
+    relatedServices: ['rds', 'aurora', 'dynamodb'],
+    pricingModel: 'Pay per replication instance-hour used during the migration task.',
+    iconPath: '/icons/database/dms.svg',
+  },
+  {
+    id: 'rds-proxy',
+    name: 'Amazon RDS Proxy',
+    category: 'Database',
+    tagline: 'Fully managed, highly available database proxy for RDS and Aurora.',
+    description:
+      'Amazon RDS Proxy sits between an application and its RDS or Aurora database, pooling and sharing database connections to improve scalability, reduce failover time, and protect the database from connection storms common in serverless and highly concurrent applications.',
+    keyFeatures: [
+      'Connection pooling reduces the overhead of opening new database connections for each request',
+      'Reduces failover time by up to 66% by maintaining the connection pool through a database failover',
+      'Enforces IAM authentication and integrates with AWS Secrets Manager for credential management',
+      'Particularly effective for Lambda-based applications that can otherwise open excessive concurrent connections',
+    ],
+    useCases: [
+      'Serverless applications (Lambda) that would otherwise overwhelm a database with many short-lived connections',
+      'Applications needing faster recovery from Multi-AZ failover events',
+      'Reducing database CPU/memory overhead caused by managing many individual client connections',
+    ],
+    examNotes: [
+      'RDS Proxy is the standard exam answer for "Lambda is exhausting database connections" scenarios',
+      'It works transparently — applications connect to the proxy endpoint instead of the database endpoint, with no application code changes required for pooling',
+      'Supports MySQL, PostgreSQL, and Aurora (MySQL/PostgreSQL-compatible) — not every RDS engine',
+    ],
+    relatedServices: ['rds', 'aurora', 'lambda'],
+    pricingModel: 'Pay per vCPU-hour of the associated database instance while the proxy is provisioned.',
+    iconPath: '/icons/database/rds-proxy.svg',
+  },
+  {
+    id: 'memorydb',
+    name: 'Amazon MemoryDB for Redis',
+    category: 'Database',
+    tagline: 'Redis-compatible, durable, in-memory database for ultra-fast performance.',
+    description:
+      'Amazon MemoryDB for Redis is a Redis-compatible, durable, in-memory database service designed as a primary database (not just a cache), using a distributed transactional log to provide durability, fast failover, and recovery while retaining microsecond read and single-digit millisecond write latency.',
+    keyFeatures: [
+      'Redis-compatible data structures and commands, usable as a drop-in primary database',
+      'Multi-AZ durability via a distributed transactional log, unlike typical in-memory caches',
+      'Microsecond read latency and single-digit millisecond write latency at scale',
+      'Automatic, fast failover without data loss thanks to the durable log',
+    ],
+    useCases: [
+      'Applications needing Redis data structures and speed as a primary database, not just a cache',
+      'Real-time applications (gaming leaderboards, media streaming metadata) requiring both speed and durability',
+      'Replacing a cache-plus-database architecture with a single durable in-memory primary store',
+    ],
+    examNotes: [
+      'Key distinction from ElastiCache: MemoryDB is designed to be a durable primary database; ElastiCache for Redis is typically a cache in front of another primary database',
+      'MemoryDB retains data durability through a multi-AZ transactional log, even though access remains in-memory speed',
+      'Exam scenarios needing "Redis compatibility" plus "durable primary data store" (not just caching) point to MemoryDB',
+    ],
+    relatedServices: ['elasticache', 'dynamodb', 'rds'],
+    pricingModel: 'Pay per node-hour based on node type, plus data written to the transactional log.',
+    iconPath: '/icons/database/memorydb.svg',
+  },
+];
