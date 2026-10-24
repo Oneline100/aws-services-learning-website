@@ -1,0 +1,42 @@
+.toolbar {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem 2rem 0.5rem;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f7f8fa;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: #ff9900;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+}
+
+.name {
+  font-size: 0.85rem;
+  text-align: center;
+  color: #16191f;
+}
