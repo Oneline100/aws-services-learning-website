@@ -1,0 +1,15 @@
+:global(body) {
+  margin: 0;
+  font-family: 'Amazon Ember', 'Helvetica Neue', Arial, sans-serif;
+  background: #ffffff;
+  color: #16191f;
+}
+
+:global(h1),
+:global(h2) {
+  color: #232f3e;
+}
+
+:global(button) {
+  font-family: inherit;
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import type { AWSService } from '../types/service';
 import { getServiceById } from '../data/services';
 import ServiceGrid from '../components/Grid/ServiceGrid';
@@ -8,7 +9,7 @@ export default function HomePage() {
   const [selectedService, setSelectedService] = useState<AWSService | null>(null);
 
   return (
-    <div>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}>
       <ServiceGrid onSelectService={setSelectedService} />
       <ServiceModal
         service={selectedService}
@@ -18,6 +19,6 @@ export default function HomePage() {
           if (next) setSelectedService(next);
         }}
       />
-    </div>
+    </motion.div>
   );
 }

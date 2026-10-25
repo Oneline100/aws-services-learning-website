@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import type { AWSService } from '../types/service';
 import { ALL_ARCHITECTURES, getArchitectureById } from '../data/architectures';
 import { getServiceById } from '../data/services';
@@ -14,7 +15,7 @@ export default function ArchitecturePage() {
   const activeDemo = demoId ? getArchitectureById(demoId) : ALL_ARCHITECTURES[0];
 
   return (
-    <div style={{ display: 'flex', gap: '1.5rem', padding: '1.5rem 2rem' }}>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }} style={{ display: 'flex', gap: '1.5rem', padding: '1.5rem 2rem' }}>
       <aside style={{ minWidth: 220 }}>
         <h2>Architecture Demos</h2>
         <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -54,6 +55,6 @@ export default function ArchitecturePage() {
           if (next) setSelectedService(next);
         }}
       />
-    </div>
+    </motion.div>
   );
 }
