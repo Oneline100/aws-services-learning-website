@@ -1,0 +1,301 @@
+import type { AWSService } from '../../types/service';
+
+export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
+  {
+    id: 'codecommit',
+    name: 'AWS CodeCommit',
+    category: 'Developer Tools',
+    tagline: 'Fully managed, private Git repositories for secure source control.',
+    description:
+      'AWS CodeCommit is a fully managed source control service that hosts private Git repositories, eliminating the need to operate your own source control system or worry about scaling its infrastructure.',
+    keyFeatures: [
+      'Fully managed, highly available Git repositories with no infrastructure to provision or scale',
+      'Encrypts repositories at rest and in transit, and integrates with IAM for fine-grained access control',
+      'Supports standard Git commands and workflows, so existing Git tooling works without modification',
+      'Triggers notifications or invokes Lambda functions on repository events such as pushes or pull requests',
+    ],
+    useCases: [
+      'Hosting private source code repositories without managing your own Git server',
+      'Triggering a CodePipeline build/deploy workflow automatically on every commit to a branch',
+      'Collaborating on code with pull requests, branching, and merging within an AWS-native tool',
+    ],
+    examNotes: [
+      'CodeCommit is AWS\'s managed Git-compatible source control service — the source stage of a typical CodePipeline',
+      'As of 2024, AWS stopped onboarding new CodeCommit customers; existing exam guides may still test it as the source-control piece of the pipeline',
+      'Access is controlled via IAM policies and Git credentials/SSH keys, not a separate user system',
+    ],
+    relatedServices: ['codepipeline', 'codebuild', 'codedeploy'],
+    pricingModel: 'Free tier includes 5 active users per month; beyond that, pay per active user per month plus storage and Git request charges.',
+    iconPath: '/icons/developer-tools/codecommit.svg',
+  },
+  {
+    id: 'codebuild',
+    name: 'AWS CodeBuild',
+    category: 'Developer Tools',
+    tagline: 'Fully managed build service that compiles source code, runs tests, and produces artifacts.',
+    description:
+      'AWS CodeBuild is a fully managed continuous integration service that compiles source code, runs unit tests, and produces deployable software artifacts, scaling build capacity automatically without the need to provision or manage build servers.',
+    keyFeatures: [
+      'Fully managed, scales build capacity on demand and runs multiple builds concurrently',
+      'Buildspec.yml files define build phases (install, pre_build, build, post_build) as code',
+      'Prebuilt Docker images for popular languages/runtimes, or bring your own custom build environment image',
+      'Pay only for the compute time used during each build, with no idle capacity to manage',
+    ],
+    useCases: [
+      'Compiling source code and running automated unit/integration tests as part of a CI pipeline',
+      'Producing deployable build artifacts (e.g., JAR files, Docker images) for downstream deployment',
+      'Replacing self-managed Jenkins build servers with a serverless, pay-per-use build service',
+    ],
+    examNotes: [
+      'CodeBuild is the "build" stage in a CI/CD pipeline — it compiles and tests code, distinguishing it from CodeDeploy (deployment) and CodePipeline (orchestration)',
+      'Build instructions are defined declaratively in a buildspec.yml file checked into the source repository',
+      'Scales automatically and runs builds in parallel, with no persistent build server to patch or manage',
+    ],
+    relatedServices: ['codepipeline', 'codecommit', 'codedeploy', 'ecr'],
+    pricingModel: 'Pay per build minute based on the compute type (vCPU/memory) selected, with a monthly free tier.',
+    iconPath: '/icons/developer-tools/codebuild.svg',
+  },
+  {
+    id: 'codepipeline',
+    name: 'AWS CodePipeline',
+    category: 'Developer Tools',
+    tagline: 'Fully managed continuous delivery service that orchestrates release pipelines.',
+    description:
+      'AWS CodePipeline is a fully managed continuous delivery service that automates the build, test, and deploy phases of your release process, orchestrating source, build, and deploy stages (often using CodeCommit, CodeBuild, and CodeDeploy) every time there is a code change.',
+    keyFeatures: [
+      'Models a release process as a series of stages (source, build, test, deploy) and actions within each stage',
+      'Automatically triggers a pipeline run whenever a change is detected in the configured source (e.g., a Git push)',
+      'Integrates with third-party tools (GitHub, Jenkins) as well as native AWS services at each stage',
+      'Manual approval actions can gate progression between stages, such as before a production deployment',
+    ],
+    useCases: [
+      'Orchestrating an end-to-end CI/CD release pipeline from source commit to production deployment',
+      'Automating consistent, repeatable deployments that reduce manual release errors',
+      'Inserting manual approval gates before promoting a build to a production environment',
+    ],
+    examNotes: [
+      'CodePipeline is the orchestrator that ties together source (CodeCommit/GitHub), build (CodeBuild), and deploy (CodeDeploy/CloudFormation) stages — know the four services work together',
+      'Pipeline stages run in sequence, but actions within a stage can run in parallel',
+      'Manual approval actions are the standard exam answer for "require human sign-off before deploying to production"',
+    ],
+    relatedServices: ['codecommit', 'codebuild', 'codedeploy', 'cloudformation'],
+    pricingModel: 'Pay a flat monthly fee per active pipeline, with a free tier for a limited number of pipelines.',
+    iconPath: '/icons/developer-tools/codepipeline.svg',
+  },
+  {
+    id: 'codedeploy',
+    name: 'AWS CodeDeploy',
+    category: 'Developer Tools',
+    tagline: 'Automates application deployments to EC2, on-premises servers, Lambda, and ECS.',
+    description:
+      'AWS CodeDeploy automates code deployments to Amazon EC2 instances, on-premises servers, AWS Lambda functions, and Amazon ECS services, supporting in-place and blue/green deployment strategies while minimizing downtime and enabling automatic rollback on failure.',
+    keyFeatures: [
+      'Supports in-place deployments (EC2/on-premises) and blue/green deployments (EC2, Lambda, ECS)',
+      'AppSpec files define deployment lifecycle hooks (e.g., BeforeInstall, AfterInstall, ValidateService)',
+      'Automatic rollback reverts to the last known good deployment if a deployment or health check fails',
+      'Deployment configurations control rollout speed, such as all-at-once, canary, or linear traffic shifting for Lambda/ECS',
+    ],
+    useCases: [
+      'Deploying application updates to a fleet of EC2 instances with zero or minimal downtime',
+      'Shifting Lambda function traffic gradually (canary/linear) to a new version with automatic rollback on errors',
+      'Performing blue/green deployments to ECS services to reduce deployment risk',
+    ],
+    examNotes: [
+      'CodeDeploy handles the "deploy" stage, distinct from CodeBuild (build/test); it is the typical deploy action within a CodePipeline',
+      'Blue/green deployments shift traffic to a new environment and can automatically roll back using CloudWatch alarms tied to the deployment',
+      'Supports EC2/on-premises, Lambda, and ECS as deployment compute platforms — each with different supported deployment types',
+    ],
+    relatedServices: ['codepipeline', 'codebuild', 'ec2', 'ecs'],
+    pricingModel: 'No additional charge for deployments to EC2/Lambda/ECS; on-premises instance deployments are billed per instance update.',
+    iconPath: '/icons/developer-tools/codedeploy.svg',
+  },
+  {
+    id: 'cloud9',
+    name: 'AWS Cloud9',
+    category: 'Developer Tools',
+    tagline: 'Cloud-based integrated development environment (IDE) accessible from a browser.',
+    description:
+      'AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug code with just a browser, preconfigured with tooling for popular programming languages and direct terminal access to the underlying AWS compute environment.',
+    keyFeatures: [
+      'Browser-based IDE with a built-in terminal, debugger, and code editor requiring no local setup',
+      'Preconfigured with runtimes and tools for many popular programming languages out of the box',
+      'Environments run on an EC2 instance or can connect to any SSH-accessible server',
+      'Supports real-time collaborative editing, allowing multiple developers to work in the same environment simultaneously',
+    ],
+    useCases: [
+      'Developing and testing code from any machine with just a web browser, without local environment setup',
+      'Pair programming or collaborative debugging sessions in a shared cloud IDE',
+      'Quickly spinning up a consistent development environment for workshops or onboarding new developers',
+    ],
+    examNotes: [
+      'Cloud9 is a browser-based IDE, not a build or deploy service — it is a development-time tool, distinct from the CI/CD pipeline services',
+      'New customer access to Cloud9 has been discontinued by AWS in favor of tools like the CodeCatalyst or SageMaker/VS Code-based environments, though it may still appear on exams',
+      'Environments can run on an EC2 instance that you can start/stop like any other instance',
+    ],
+    relatedServices: ['ec2', 'codecommit', 'codecatalyst'],
+    pricingModel: 'No additional charge for Cloud9 itself; you pay for the underlying EC2 instance or connected compute resources.',
+    iconPath: '/icons/developer-tools/cloud9.svg',
+  },
+  {
+    id: 'codeartifact',
+    name: 'AWS CodeArtifact',
+    category: 'Developer Tools',
+    tagline: 'Fully managed artifact repository for software packages and dependencies.',
+    description:
+      'AWS CodeArtifact is a fully managed artifact repository service that organizations use to securely store, publish, and share software packages (such as npm, Maven, PyPI, and NuGet packages) used in their software development process.',
+    keyFeatures: [
+      'Supports common package manager formats including npm, pip, Maven/Gradle, and NuGet',
+      'Upstream repositories can proxy and cache packages from public repositories like npmjs or PyPI',
+      'Integrates with standard build tools so developers interact with it the same way as any other package repository',
+      'Fine-grained IAM-based access control over who can publish or consume specific packages',
+    ],
+    useCases: [
+      'Hosting internal/private software packages and shared libraries for consumption across development teams',
+      'Caching and proxying public package repositories to improve build reliability and reduce external dependency risk',
+      'Centrally controlling which package versions are approved for use across an organization',
+    ],
+    examNotes: [
+      'CodeArtifact is for package/dependency management (npm, Maven, PyPI, NuGet), not source code — distinct from CodeCommit which stores source',
+      'Upstream repository configuration lets CodeArtifact cache public packages, reducing reliance on direct internet access during builds',
+      'Commonly paired with CodeBuild, which can pull build dependencies directly from a CodeArtifact repository',
+    ],
+    relatedServices: ['codebuild', 'codecommit', 'codepipeline'],
+    pricingModel: 'Pay for storage used and the number of requests made to the repository.',
+    iconPath: '/icons/developer-tools/codeartifact.svg',
+  },
+  {
+    id: 'x-ray',
+    name: 'AWS X-Ray',
+    category: 'Developer Tools',
+    tagline: 'Distributed tracing service that analyzes and debugs production, distributed applications.',
+    description:
+      'AWS X-Ray helps developers analyze and debug production and distributed applications by collecting data about requests as they travel through application components, producing a service map and detailed traces to pinpoint performance bottlenecks and errors.',
+    keyFeatures: [
+      'Traces requests end-to-end across microservices, Lambda functions, and other application components',
+      'Generates a visual service map showing how components interact and where latency or errors occur',
+      'Captures detailed segment and subsegment data, including downstream calls to databases and external HTTP services',
+      'Sampling rules control what percentage of requests are traced to balance visibility with overhead/cost',
+    ],
+    useCases: [
+      'Identifying the root cause of latency or errors in a distributed, microservices-based application',
+      'Visualizing the end-to-end flow of requests across multiple services, including Lambda-based serverless architectures',
+      'Pinpointing which specific downstream dependency (e.g., a database call) is causing performance degradation',
+    ],
+    examNotes: [
+      'X-Ray provides distributed tracing (request-level, cross-service flow); CloudWatch provides metrics/logs/alarms — they are complementary, not interchangeable',
+      'Requires instrumentation via the X-Ray SDK (or auto-instrumentation in Lambda) to send trace data to the X-Ray service',
+      'The generated service map is the key exam visual cue for identifying X-Ray as the correct answer for "visualize request flow across microservices"',
+    ],
+    relatedServices: ['cloudwatch', 'lambda', 'api-gateway'],
+    pricingModel: 'Pay per trace recorded and retrieved, with a monthly free tier of traces.',
+    iconPath: '/icons/developer-tools/x-ray.svg',
+  },
+  {
+    id: 'cloudshell',
+    name: 'AWS CloudShell',
+    category: 'Developer Tools',
+    tagline: 'Browser-based shell with the AWS CLI preauthenticated and preinstalled.',
+    description:
+      'AWS CloudShell is a browser-based, preauthenticated shell that you can launch directly from the AWS Management Console, with the AWS CLI and common development tools already installed, requiring no local setup or credential configuration.',
+    keyFeatures: [
+      'Launches directly from the AWS console with credentials already authenticated to your current session',
+      'Comes preinstalled with the AWS CLI, Python, Node.js, and other common development tools and SDKs',
+      'Provides persistent storage (up to 1GB) per Region for files and scripts across sessions',
+      'Runs entirely in the browser, with no local machine setup, installation, or credential management required',
+    ],
+    useCases: [
+      'Running AWS CLI commands quickly without installing or configuring the CLI locally',
+      'Testing scripts or automation against an AWS account directly from the console in any browser',
+      'Providing instant command-line access during training, demos, or troubleshooting sessions',
+    ],
+    examNotes: [
+      'CloudShell requires no setup or local credential configuration, distinguishing it from installing the AWS CLI locally',
+      'It is free to use (within usage limits) and tied to the IAM identity used to sign in to the console',
+      'Persistent $HOME storage per Region means scripts and files survive between CloudShell sessions',
+    ],
+    relatedServices: ['cloud9', 'systems-manager', 'codecommit'],
+    pricingModel: 'AWS CloudShell is offered at no additional charge, within AWS-defined usage limits.',
+    iconPath: '/icons/developer-tools/cloudshell.svg',
+  },
+  {
+    id: 'codecatalyst',
+    name: 'Amazon CodeCatalyst',
+    category: 'Developer Tools',
+    tagline: 'Unified software development service spanning planning, coding, building, and deploying.',
+    description:
+      'Amazon CodeCatalyst is a unified software development service that brings together project planning, source control, CI/CD, and cloud development environments in a single collaborative space, enabling teams to plan, code, build, test, and deploy applications on AWS.',
+    keyFeatures: [
+      'Combines issue tracking, source repositories, CI/CD workflows, and cloud-based dev environments in one tool',
+      'Blueprints provide preconfigured project templates that provision infrastructure and a working CI/CD pipeline',
+      'Dev Environments offer cloud-based, on-demand workspaces for writing and testing code without local setup',
+      'Workflows define automated build, test, and deployment pipelines using a YAML-based configuration',
+    ],
+    useCases: [
+      'Consolidating project planning, source control, and CI/CD into a single tool for a development team',
+      'Quickly bootstrapping a new application with a preconfigured Blueprint, including infrastructure and pipeline',
+      'Providing on-demand, cloud-based development environments instead of managing local developer machines',
+    ],
+    examNotes: [
+      'CodeCatalyst is positioned as a modern, unified successor spanning capabilities previously split across CodeCommit, CodePipeline, and Cloud9',
+      'Blueprints are the key differentiator — they scaffold both application code and the supporting AWS infrastructure/pipeline together',
+      'Still relatively new; exam questions are more likely to focus on the individual Code* services (CodeCommit, CodeBuild, CodeDeploy, CodePipeline) than CodeCatalyst specifically',
+    ],
+    relatedServices: ['codecommit', 'codepipeline', 'cloud9'],
+    pricingModel: 'Pay for compute and storage usage (Dev Environments, workflow build minutes) beyond a monthly free tier per user.',
+    iconPath: '/icons/developer-tools/codecatalyst.svg',
+  },
+  {
+    id: 'sam',
+    name: 'AWS Serverless Application Model (SAM)',
+    category: 'Developer Tools',
+    tagline: 'Open-source framework for building and deploying serverless applications on AWS.',
+    description:
+      'The AWS Serverless Application Model (SAM) is an open-source framework that extends AWS CloudFormation with a simplified shorthand syntax for defining serverless resources (Lambda functions, APIs, DynamoDB tables), and provides a CLI for building, testing, and deploying serverless applications locally and in the cloud.',
+    keyFeatures: [
+      'Simplified YAML syntax (transformed into full CloudFormation) specifically for serverless resource types',
+      'SAM CLI supports local invocation and testing of Lambda functions and API Gateway endpoints before deployment',
+      'sam deploy packages and deploys a serverless application as a CloudFormation stack in a single command',
+      'Supports gradual Lambda deployment strategies (canary, linear) integrated with CodeDeploy for safe rollouts',
+    ],
+    useCases: [
+      'Defining and deploying a serverless application (Lambda, API Gateway, DynamoDB) with minimal boilerplate template code',
+      'Testing Lambda functions and API Gateway integrations locally before deploying to AWS',
+      'Automating safe, gradual rollouts of new Lambda function versions using built-in CodeDeploy integration',
+    ],
+    examNotes: [
+      'SAM is a CloudFormation extension purpose-built for serverless resources — SAM templates transform into standard CloudFormation templates at deployment time',
+      'The SAM CLI\'s local testing capability (sam local invoke) is a key differentiator from plain CloudFormation, which has no local execution',
+      'Built-in gradual deployment preferences (Canary10Percent5Minutes, Linear10PercentEvery1Minute) integrate directly with CodeDeploy for Lambda',
+    ],
+    relatedServices: ['lambda', 'cloudformation', 'api-gateway', 'codedeploy'],
+    pricingModel: 'AWS SAM is a free, open-source tool; you pay only for the underlying AWS resources it provisions.',
+    iconPath: '/icons/developer-tools/sam.svg',
+  },
+  {
+    id: 'amazon-q-developer',
+    name: 'Amazon Q Developer',
+    category: 'Developer Tools',
+    tagline: 'Generative AI-powered assistant for software development tasks on AWS.',
+    description:
+      'Amazon Q Developer is a generative AI-powered assistant that helps developers with code generation, code explanation, debugging, security scanning, and AWS-specific guidance directly within IDEs, the AWS console, and chat interfaces.',
+    keyFeatures: [
+      'Generates code suggestions and entire functions from natural-language comments or prompts within supported IDEs',
+      'Provides automated code reviews, including security vulnerability scanning and suggested remediations',
+      'Answers natural-language questions about AWS services, best practices, and troubleshooting directly in the console',
+      'Can assist with upgrading and transforming legacy application code (e.g., Java version upgrades) at scale',
+    ],
+    useCases: [
+      'Accelerating application development with AI-generated code suggestions inside an IDE',
+      'Scanning code for security vulnerabilities and receiving suggested fixes before deployment',
+      'Getting conversational, AWS-specific technical guidance directly within the AWS Management Console',
+    ],
+    examNotes: [
+      'Amazon Q Developer (formerly CodeWhisperer/part of Amazon Q) is AWS\'s generative AI coding assistant — distinct from Amazon Q Business, which targets business users',
+      'Includes a free individual tier as well as a Pro tier with administrative controls and enterprise code customization',
+      'Exam questions are more likely to test broad awareness of generative AI developer tooling than deep feature-level detail',
+    ],
+    relatedServices: ['codecatalyst', 'cloud9', 'x-ray'],
+    pricingModel: 'Free tier available for individual use; a Pro tier is billed per user per month for enterprise administrative features.',
+    iconPath: '/icons/developer-tools/amazon-q-developer.svg',
+  },
+];
