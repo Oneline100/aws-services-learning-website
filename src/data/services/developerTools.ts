@@ -26,7 +26,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['codepipeline', 'codebuild', 'codedeploy'],
     pricingModel: 'Free tier includes 5 active users per month; beyond that, pay per active user per month plus storage and Git request charges.',
-    iconPath: '/icons/developer-tools/codecommit.svg',
+    iconPath: './icons/developer-tools/codecommit.svg',
   },
   {
     id: 'codebuild',
@@ -53,7 +53,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['codepipeline', 'codecommit', 'codedeploy', 'ecr'],
     pricingModel: 'Pay per build minute based on the compute type (vCPU/memory) selected, with a monthly free tier.',
-    iconPath: '/icons/developer-tools/codebuild.svg',
+    iconPath: './icons/developer-tools/codebuild.svg',
   },
   {
     id: 'codepipeline',
@@ -80,7 +80,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['codecommit', 'codebuild', 'codedeploy', 'cloudformation'],
     pricingModel: 'Pay a flat monthly fee per active pipeline, with a free tier for a limited number of pipelines.',
-    iconPath: '/icons/developer-tools/codepipeline.svg',
+    iconPath: './icons/developer-tools/codepipeline.svg',
   },
   {
     id: 'codedeploy',
@@ -107,7 +107,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['codepipeline', 'codebuild', 'ec2', 'ecs'],
     pricingModel: 'No additional charge for deployments to EC2/Lambda/ECS; on-premises instance deployments are billed per instance update.',
-    iconPath: '/icons/developer-tools/codedeploy.svg',
+    iconPath: './icons/developer-tools/codedeploy.svg',
   },
   {
     id: 'cloud9',
@@ -134,7 +134,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'codecommit', 'codecatalyst'],
     pricingModel: 'No additional charge for Cloud9 itself; you pay for the underlying EC2 instance or connected compute resources.',
-    iconPath: '/icons/developer-tools/cloud9.svg',
+    iconPath: './icons/developer-tools/cloud9.svg',
   },
   {
     id: 'codeartifact',
@@ -161,7 +161,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['codebuild', 'codecommit', 'codepipeline'],
     pricingModel: 'Pay for storage used and the number of requests made to the repository.',
-    iconPath: '/icons/developer-tools/codeartifact.svg',
+    iconPath: './icons/developer-tools/codeartifact.svg',
   },
   {
     id: 'x-ray',
@@ -188,7 +188,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudwatch', 'lambda', 'api-gateway'],
     pricingModel: 'Pay per trace recorded and retrieved, with a monthly free tier of traces.',
-    iconPath: '/icons/developer-tools/x-ray.svg',
+    iconPath: './icons/developer-tools/x-ray.svg',
   },
   {
     id: 'cloudshell',
@@ -215,7 +215,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloud9', 'systems-manager', 'codecommit'],
     pricingModel: 'AWS CloudShell is offered at no additional charge, within AWS-defined usage limits.',
-    iconPath: '/icons/developer-tools/cloudshell.svg',
+    iconPath: './icons/developer-tools/cloudshell.svg',
   },
   {
     id: 'codecatalyst',
@@ -242,7 +242,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['codecommit', 'codepipeline', 'cloud9'],
     pricingModel: 'Pay for compute and storage usage (Dev Environments, workflow build minutes) beyond a monthly free tier per user.',
-    iconPath: '/icons/developer-tools/codecatalyst.svg',
+    iconPath: './icons/developer-tools/codecatalyst.svg',
   },
   {
     id: 'sam',
@@ -269,7 +269,7 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['lambda', 'cloudformation', 'api-gateway', 'codedeploy'],
     pricingModel: 'AWS SAM is a free, open-source tool; you pay only for the underlying AWS resources it provisions.',
-    iconPath: '/icons/developer-tools/sam.svg',
+    iconPath: './icons/developer-tools/sam.svg',
   },
   {
     id: 'amazon-q-developer',
@@ -296,6 +296,6 @@ export const DEVELOPER_TOOLS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['codecatalyst', 'cloud9', 'x-ray'],
     pricingModel: 'Free tier available for individual use; a Pro tier is billed per user per month for enterprise administrative features.',
-    iconPath: '/icons/developer-tools/amazon-q-developer.svg',
+    iconPath: './icons/developer-tools/amazon-q-developer.svg',
   },
 ];

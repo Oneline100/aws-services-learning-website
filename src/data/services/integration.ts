@@ -26,7 +26,7 @@ export const INTEGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['sns', 'lambda', 'step-functions'],
     pricingModel: 'Pay per request (API call) based on the number of messages sent, received, and deleted.',
-    iconPath: '/icons/integration/sqs.svg',
+    iconPath: './icons/integration/sqs.svg',
   },
   {
     id: 'sns',
@@ -53,7 +53,7 @@ export const INTEGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['sqs', 'lambda', 'eventbridge'],
     pricingModel: 'Pay per notification published and delivered, with pricing varying by delivery protocol (e.g., SMS, email).',
-    iconPath: '/icons/integration/sns.svg',
+    iconPath: './icons/integration/sns.svg',
   },
   {
     id: 'eventbridge',
@@ -80,7 +80,7 @@ export const INTEGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudwatch', 'sns', 'sqs', 'lambda'],
     pricingModel: 'Pay per event published to a custom or partner event bus; events on the default bus from AWS services are free.',
-    iconPath: '/icons/integration/eventbridge.svg',
+    iconPath: './icons/integration/eventbridge.svg',
   },
   {
     id: 'step-functions',
@@ -107,7 +107,7 @@ export const INTEGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['lambda', 'sqs', 'sns', 'eventbridge'],
     pricingModel: 'Standard workflows are priced per state transition; Express workflows are priced by number of requests and duration/memory consumed.',
-    iconPath: '/icons/integration/step-functions.svg',
+    iconPath: './icons/integration/step-functions.svg',
   },
   {
     id: 'appflow',
@@ -134,7 +134,7 @@ export const INTEGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'eventbridge'],
     pricingModel: 'Pay per flow run, based on the amount of data processed.',
-    iconPath: '/icons/integration/appflow.svg',
+    iconPath: './icons/integration/appflow.svg',
   },
   {
     id: 'amazon-mq',
@@ -161,7 +161,7 @@ export const INTEGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['sqs', 'sns'],
     pricingModel: 'Pay an hourly rate based on broker instance type and storage, plus data transfer charges.',
-    iconPath: '/icons/integration/amazon-mq.svg',
+    iconPath: './icons/integration/amazon-mq.svg',
   },
   {
     id: 'appsync',
@@ -188,7 +188,7 @@ export const INTEGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['api-gateway', 'dynamodb', 'cognito', 'lambda'],
     pricingModel: 'Pay per million query/data-modification requests and per real-time subscription message delivered.',
-    iconPath: '/icons/integration/appsync.svg',
+    iconPath: './icons/integration/appsync.svg',
   },
   {
     id: 'swf',
@@ -215,6 +215,6 @@ export const INTEGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['step-functions', 'sqs'],
     pricingModel: 'Pay per workflow execution, task, and open workflow day, based on usage.',
-    iconPath: '/icons/integration/swf.svg',
+    iconPath: './icons/integration/swf.svg',
   },
 ];

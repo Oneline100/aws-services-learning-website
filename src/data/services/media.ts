@@ -26,7 +26,7 @@ export const MEDIA_SERVICES: AWSService[] = [
     ],
     relatedServices: ['mediaconvert', 's3'],
     pricingModel: 'Pay per minute of output transcoded, with pricing varying by output resolution tier.',
-    iconPath: '/icons/media/elastic-transcoder.svg',
+    iconPath: './icons/media/elastic-transcoder.svg',
   },
   {
     id: 'mediaconvert',
@@ -53,7 +53,7 @@ export const MEDIA_SERVICES: AWSService[] = [
     ],
     relatedServices: ['medialive', 'mediapackage', 'elastic-transcoder', 's3'],
     pricingModel: 'Pay per minute of video transcoded, with pricing tiers based on resolution and features used.',
-    iconPath: '/icons/media/mediaconvert.svg',
+    iconPath: './icons/media/mediaconvert.svg',
   },
   {
     id: 'medialive',
@@ -80,7 +80,7 @@ export const MEDIA_SERVICES: AWSService[] = [
     ],
     relatedServices: ['mediaconvert', 'mediapackage', 'mediaconnect', 'cloudfront'],
     pricingModel: 'Pay per hour the channel is running, based on input/output resolution and the number of pipelines (standard vs. single).',
-    iconPath: '/icons/media/medialive.svg',
+    iconPath: './icons/media/medialive.svg',
   },
   {
     id: 'mediapackage',
@@ -107,7 +107,7 @@ export const MEDIA_SERVICES: AWSService[] = [
     ],
     relatedServices: ['medialive', 'mediaconvert', 'cloudfront', 'mediastore'],
     pricingModel: 'Pay based on the amount of video egressed and packaged, with separate rates for live and VOD origination.',
-    iconPath: '/icons/media/mediapackage.svg',
+    iconPath: './icons/media/mediapackage.svg',
   },
   {
     id: 'mediastore',
@@ -134,7 +134,7 @@ export const MEDIA_SERVICES: AWSService[] = [
     ],
     relatedServices: ['medialive', 'mediapackage', 's3', 'cloudfront'],
     pricingModel: 'Pay per GB stored and per GB of data transferred (requests in/out of MediaStore).',
-    iconPath: '/icons/media/mediastore.svg',
+    iconPath: './icons/media/mediastore.svg',
   },
   {
     id: 'mediatailor',
@@ -161,7 +161,7 @@ export const MEDIA_SERVICES: AWSService[] = [
     ],
     relatedServices: ['mediapackage', 'medialive', 'cloudfront'],
     pricingModel: 'Pay based on the number of ad decisioning requests and the volume of content manifest requests processed.',
-    iconPath: '/icons/media/mediatailor.svg',
+    iconPath: './icons/media/mediatailor.svg',
   },
   {
     id: 'mediaconnect',
@@ -188,7 +188,7 @@ export const MEDIA_SERVICES: AWSService[] = [
     ],
     relatedServices: ['medialive', 'mediapackage', 'cloudfront'],
     pricingModel: 'Pay based on the number of outputs, duration of flows, and data transfer volume for each live feed.',
-    iconPath: '/icons/media/mediaconnect.svg',
+    iconPath: './icons/media/mediaconnect.svg',
   },
   {
     id: 'interactive-video-service',
@@ -215,6 +215,6 @@ export const MEDIA_SERVICES: AWSService[] = [
     ],
     relatedServices: ['medialive', 'mediapackage', 'cloudfront'],
     pricingModel: 'Pay per minute of video input (ingested) and per minute of video output (viewer stream time) delivered.',
-    iconPath: '/icons/media/interactive-video-service.svg',
+    iconPath: './icons/media/interactive-video-service.svg',
   },
 ];

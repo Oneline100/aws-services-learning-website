@@ -26,7 +26,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['qldb', 'dynamodb'],
     pricingModel: 'Pay for network membership, peer node usage (per hour), and data storage/transferred within the blockchain network.',
-    iconPath: '/icons/other/managed-blockchain.svg',
+    iconPath: './icons/other/managed-blockchain.svg',
   },
   {
     id: 'braket',
@@ -53,7 +53,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['sagemaker'],
     pricingModel: 'Pay per simulator task-second for simulators, plus per-shot and per-hour charges when using actual quantum hardware.',
-    iconPath: '/icons/other/braket.svg',
+    iconPath: './icons/other/braket.svg',
   },
   {
     id: 'ground-station',
@@ -80,7 +80,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'ec2'],
     pricingModel: 'Pay per minute of antenna usage during a scheduled satellite contact; no upfront or long-term commitment required.',
-    iconPath: '/icons/other/ground-station.svg',
+    iconPath: './icons/other/ground-station.svg',
   },
   {
     id: 'robomaker',
@@ -107,7 +107,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['lambda', 'sagemaker', 'iot-greengrass'],
     pricingModel: 'Pay for simulation usage (per vCPU-hour) and the underlying compute/storage resources consumed during development and fleet management.',
-    iconPath: '/icons/other/robomaker.svg',
+    iconPath: './icons/other/robomaker.svg',
   },
   {
     id: 'gamelift',
@@ -134,7 +134,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'ec2-auto-scaling'],
     pricingModel: 'Pay for the compute resources (EC2 instance hours) used to host game sessions, with no separate GameLift service fee for standard hosting.',
-    iconPath: '/icons/other/gamelift.svg',
+    iconPath: './icons/other/gamelift.svg',
   },
   {
     id: 'open-3d-engine',
@@ -161,7 +161,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['gamelift', 'robomaker'],
     pricingModel: 'Free and open source with no licensing or royalty fees; costs only arise from any AWS cloud resources used alongside it.',
-    iconPath: '/icons/other/open-3d-engine.svg',
+    iconPath: './icons/other/open-3d-engine.svg',
   },
   {
     id: 'workspaces',
@@ -188,7 +188,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['appstream-2-0', 'directory-service'],
     pricingModel: 'Pay monthly per bundle or hourly based on usage, varying by desktop hardware bundle (CPU, memory, storage) selected.',
-    iconPath: '/icons/other/workspaces.svg',
+    iconPath: './icons/other/workspaces.svg',
   },
   {
     id: 'appstream-2-0',
@@ -215,7 +215,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['workspaces'],
     pricingModel: 'Pay for streaming instance usage (per hour) based on instance family/size, plus storage for user persistent data.',
-    iconPath: '/icons/other/appstream-2-0.svg',
+    iconPath: './icons/other/appstream-2-0.svg',
   },
   {
     id: 'workdocs',
@@ -242,7 +242,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['workspaces', 'directory-service'],
     pricingModel: 'Pay per user per month, with storage tiers based on gigabytes of storage needed per user.',
-    iconPath: '/icons/other/workdocs.svg',
+    iconPath: './icons/other/workdocs.svg',
   },
   {
     id: 'chime',
@@ -269,7 +269,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['connect', 'workmail'],
     pricingModel: 'Pay per user per month for the Chime application, or pay-as-you-go for Chime SDK usage based on minutes of audio/video/messaging.',
-    iconPath: '/icons/other/chime.svg',
+    iconPath: './icons/other/chime.svg',
   },
   {
     id: 'connect',
@@ -296,7 +296,7 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['lex', 'comprehend', 'chime'],
     pricingModel: 'Pay-as-you-go per minute of usage for calls/chats handled, with no upfront fees or long-term contracts.',
-    iconPath: '/icons/other/connect.svg',
+    iconPath: './icons/other/connect.svg',
   },
   {
     id: 'workmail',
@@ -323,6 +323,6 @@ export const MISC_SERVICES: AWSService[] = [
     ],
     relatedServices: ['workspaces', 'workdocs', 'directory-service'],
     pricingModel: 'Pay per user per month, which includes a set amount of mailbox storage per user.',
-    iconPath: '/icons/other/workmail.svg',
+    iconPath: './icons/other/workmail.svg',
   },
 ];

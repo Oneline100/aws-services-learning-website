@@ -26,7 +26,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'elastic-load-balancing', 'transit-gateway', 'privatelink'],
     pricingModel: 'VPC itself is free; pay for NAT Gateways, VPN connections, and data transfer within/across the network.',
-    iconPath: '/icons/networking/vpc.svg',
+    iconPath: './icons/networking/vpc.svg',
   },
   {
     id: 'cloudfront',
@@ -53,7 +53,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'waf', 'shield', 'route-53'],
     pricingModel: 'Pay for data transfer out and HTTP/HTTPS requests, varying by edge location (price class).',
-    iconPath: '/icons/networking/cloudfront.svg',
+    iconPath: './icons/networking/cloudfront.svg',
   },
   {
     id: 'route-53',
@@ -80,7 +80,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudfront', 'elastic-load-balancing', 'global-accelerator'],
     pricingModel: 'Pay per hosted zone per month, plus per-query charges and domain registration fees.',
-    iconPath: '/icons/networking/route-53.svg',
+    iconPath: './icons/networking/route-53.svg',
   },
   {
     id: 'api-gateway',
@@ -107,7 +107,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['lambda', 'cognito', 'cloudfront'],
     pricingModel: 'Pay per API call received, plus data transfer; caching and WebSocket connections billed separately.',
-    iconPath: '/icons/networking/api-gateway.svg',
+    iconPath: './icons/networking/api-gateway.svg',
   },
   {
     id: 'direct-connect',
@@ -134,7 +134,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['vpn', 'transit-gateway', 'vpc'],
     pricingModel: 'Pay hourly port-hour fees based on connection capacity, plus data transfer out charges.',
-    iconPath: '/icons/networking/direct-connect.svg',
+    iconPath: './icons/networking/direct-connect.svg',
   },
   {
     id: 'vpn',
@@ -161,7 +161,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['direct-connect', 'vpc', 'transit-gateway'],
     pricingModel: 'Pay per VPN connection-hour, plus data transfer out.',
-    iconPath: '/icons/networking/vpn.svg',
+    iconPath: './icons/networking/vpn.svg',
   },
   {
     id: 'transit-gateway',
@@ -188,7 +188,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['vpc', 'direct-connect', 'vpn', 'network-manager'],
     pricingModel: 'Pay per attachment-hour, plus a per-GB data processing charge for traffic through the gateway.',
-    iconPath: '/icons/networking/transit-gateway.svg',
+    iconPath: './icons/networking/transit-gateway.svg',
   },
   {
     id: 'elastic-load-balancing',
@@ -215,7 +215,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'vpc', 'ec2-auto-scaling', 'global-accelerator'],
     pricingModel: 'Pay hourly per load balancer, plus Load Balancer Capacity Units (LCU) based on processed traffic.',
-    iconPath: '/icons/networking/elastic-load-balancing.svg',
+    iconPath: './icons/networking/elastic-load-balancing.svg',
   },
   {
     id: 'global-accelerator',
@@ -242,7 +242,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['elastic-load-balancing', 'route-53', 'cloudfront'],
     pricingModel: 'Pay a fixed hourly fee per accelerator, plus a data transfer premium.',
-    iconPath: '/icons/networking/global-accelerator.svg',
+    iconPath: './icons/networking/global-accelerator.svg',
   },
   {
     id: 'privatelink',
@@ -269,7 +269,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['vpc', 'cloud-map'],
     pricingModel: 'Pay hourly per VPC endpoint, plus per-GB data processed through the endpoint.',
-    iconPath: '/icons/networking/privatelink.svg',
+    iconPath: './icons/networking/privatelink.svg',
   },
   {
     id: 'cloud-map',
@@ -296,7 +296,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ecs', 'eks', 'privatelink'],
     pricingModel: 'Pay per namespace per month, plus per API call and per DNS query.',
-    iconPath: '/icons/networking/cloud-map.svg',
+    iconPath: './icons/networking/cloud-map.svg',
   },
   {
     id: 'network-firewall',
@@ -323,7 +323,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['vpc', 'waf', 'firewall-manager'],
     pricingModel: 'Pay hourly per firewall endpoint, plus per-GB of traffic processed.',
-    iconPath: '/icons/networking/network-firewall.svg',
+    iconPath: './icons/networking/network-firewall.svg',
   },
   {
     id: 'network-manager',
@@ -349,7 +349,7 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['transit-gateway', 'direct-connect', 'vpc'],
     pricingModel: 'Core features are free; charges apply for optional Network Manager CloudWatch metrics and route analyzer usage at scale.',
-    iconPath: '/icons/networking/network-manager.svg',
+    iconPath: './icons/networking/network-manager.svg',
   },
   {
     id: 'verified-access',
@@ -376,6 +376,6 @@ export const NETWORKING_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iam-identity-center', 'vpn', 'vpc'],
     pricingModel: 'Pay hourly per Verified Access endpoint, plus data processed.',
-    iconPath: '/icons/networking/verified-access.svg',
+    iconPath: './icons/networking/verified-access.svg',
   },
 ];

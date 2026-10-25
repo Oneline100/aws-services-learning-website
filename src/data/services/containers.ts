@@ -26,7 +26,7 @@ export const CONTAINER_SERVICES: AWSService[] = [
     ],
     relatedServices: ['fargate', 'ecr', 'eks'],
     pricingModel: 'No additional charge for ECS; billed for the underlying EC2 instances or Fargate vCPU/memory used.',
-    iconPath: '/icons/containers/ecs.svg',
+    iconPath: './icons/containers/ecs.svg',
   },
   {
     id: 'eks',
@@ -53,7 +53,7 @@ export const CONTAINER_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ecs', 'fargate', 'ecr'],
     pricingModel: 'Hourly charge per cluster for the control plane, plus the cost of EC2 or Fargate worker compute.',
-    iconPath: '/icons/containers/eks.svg',
+    iconPath: './icons/containers/eks.svg',
   },
   {
     id: 'fargate',
@@ -80,7 +80,7 @@ export const CONTAINER_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ecs', 'eks', 'ecr'],
     pricingModel: 'Pay per-second for the vCPU and memory resources allocated to running tasks or pods.',
-    iconPath: '/icons/containers/fargate.svg',
+    iconPath: './icons/containers/fargate.svg',
   },
   {
     id: 'ecr',
@@ -106,7 +106,7 @@ export const CONTAINER_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ecs', 'eks', 'lambda'],
     pricingModel: 'Pay per GB-month of image storage, plus data transfer charges for image pulls outside the Region.',
-    iconPath: '/icons/containers/ecr.svg',
+    iconPath: './icons/containers/ecr.svg',
   },
   {
     id: 'app-mesh',
@@ -132,7 +132,7 @@ export const CONTAINER_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ecs', 'eks', 'fargate'],
     pricingModel: 'No additional charge for App Mesh itself; billed for the underlying compute and data transfer resources used.',
-    iconPath: '/icons/containers/app-mesh.svg',
+    iconPath: './icons/containers/app-mesh.svg',
   },
   {
     id: 'red-hat-openshift-service-on-aws',
@@ -157,6 +157,6 @@ export const CONTAINER_SERVICES: AWSService[] = [
     ],
     relatedServices: ['eks', 'ecs', 'ec2'],
     pricingModel: 'Hourly/annual subscription per cluster plus the underlying AWS infrastructure (EC2, EBS, etc.) consumed.',
-    iconPath: '/icons/containers/red-hat-openshift-service-on-aws.svg',
+    iconPath: './icons/containers/red-hat-openshift-service-on-aws.svg',
   },
 ];

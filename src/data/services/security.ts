@@ -26,7 +26,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['organizations', 'iam-identity-center', 'kms', 'cognito'],
     pricingModel: 'IAM is offered at no additional charge.',
-    iconPath: '/icons/security/iam.svg',
+    iconPath: './icons/security/iam.svg',
   },
   {
     id: 'organizations',
@@ -53,7 +53,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['control-tower', 'iam', 'resource-access-manager'],
     pricingModel: 'AWS Organizations is offered at no additional charge.',
-    iconPath: '/icons/security/organizations.svg',
+    iconPath: './icons/security/organizations.svg',
   },
   {
     id: 'cognito',
@@ -80,7 +80,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['api-gateway', 'iam', 'iam-identity-center'],
     pricingModel: 'Free tier for a set number of monthly active users, then pay per monthly active user.',
-    iconPath: '/icons/security/cognito.svg',
+    iconPath: './icons/security/cognito.svg',
   },
   {
     id: 'guardduty',
@@ -107,7 +107,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['security-hub', 'detective', 'macie', 'inspector'],
     pricingModel: 'Pay based on the volume of CloudTrail events, VPC Flow Logs, and DNS logs analyzed.',
-    iconPath: '/icons/security/guardduty.svg',
+    iconPath: './icons/security/guardduty.svg',
   },
   {
     id: 'inspector',
@@ -134,7 +134,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['guardduty', 'security-hub', 'ecr'],
     pricingModel: 'Pay per instance, container image scan, or Lambda function assessed, based on usage.',
-    iconPath: '/icons/security/inspector.svg',
+    iconPath: './icons/security/inspector.svg',
   },
   {
     id: 'macie',
@@ -161,7 +161,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'security-hub', 'guardduty'],
     pricingModel: 'Pay based on the volume of S3 data evaluated and the number of buckets monitored.',
-    iconPath: '/icons/security/macie.svg',
+    iconPath: './icons/security/macie.svg',
   },
   {
     id: 'secrets-manager',
@@ -188,7 +188,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['kms', 'rds', 'iam'],
     pricingModel: 'Pay per secret stored per month, plus per API call for retrieval.',
-    iconPath: '/icons/security/secrets-manager.svg',
+    iconPath: './icons/security/secrets-manager.svg',
   },
   {
     id: 'kms',
@@ -215,7 +215,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudhsm', 's3', 'secrets-manager', 'certificate-manager'],
     pricingModel: 'Pay a monthly fee per customer managed key, plus per API request for cryptographic operations.',
-    iconPath: '/icons/security/kms.svg',
+    iconPath: './icons/security/kms.svg',
   },
   {
     id: 'waf',
@@ -242,7 +242,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['shield', 'cloudfront', 'elastic-load-balancing', 'firewall-manager'],
     pricingModel: 'Pay a monthly fee per web ACL and rule, plus per million requests inspected.',
-    iconPath: '/icons/security/waf.svg',
+    iconPath: './icons/security/waf.svg',
   },
   {
     id: 'shield',
@@ -269,7 +269,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['waf', 'cloudfront', 'route-53', 'firewall-manager'],
     pricingModel: 'Shield Standard is free; Shield Advanced costs a monthly subscription fee plus data transfer usage.',
-    iconPath: '/icons/security/shield.svg',
+    iconPath: './icons/security/shield.svg',
   },
   {
     id: 'security-hub',
@@ -296,7 +296,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['guardduty', 'inspector', 'macie', 'detective'],
     pricingModel: 'Pay per security check and per finding ingested, based on usage volume.',
-    iconPath: '/icons/security/security-hub.svg',
+    iconPath: './icons/security/security-hub.svg',
   },
   {
     id: 'certificate-manager',
@@ -323,7 +323,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudfront', 'elastic-load-balancing', 'api-gateway', 'kms'],
     pricingModel: 'Public certificates for integrated AWS services are free; Private CA incurs a monthly fee plus per-certificate issuance charges.',
-    iconPath: '/icons/security/certificate-manager.svg',
+    iconPath: './icons/security/certificate-manager.svg',
   },
   {
     id: 'directory-service',
@@ -350,7 +350,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iam-identity-center', 'organizations'],
     pricingModel: 'Pay hourly based on directory type and size/edition selected.',
-    iconPath: '/icons/security/directory-service.svg',
+    iconPath: './icons/security/directory-service.svg',
   },
   {
     id: 'iam-identity-center',
@@ -377,7 +377,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['organizations', 'iam', 'directory-service', 'cognito'],
     pricingModel: 'IAM Identity Center is offered at no additional charge.',
-    iconPath: '/icons/security/iam-identity-center.svg',
+    iconPath: './icons/security/iam-identity-center.svg',
   },
   {
     id: 'control-tower',
@@ -404,7 +404,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['organizations', 'iam-identity-center', 'audit-manager'],
     pricingModel: 'Control Tower itself has no additional charge; you pay for the underlying AWS resources and services it provisions (e.g., Config, CloudTrail).',
-    iconPath: '/icons/security/control-tower.svg',
+    iconPath: './icons/security/control-tower.svg',
   },
   {
     id: 'artifact',
@@ -431,7 +431,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['audit-manager', 'organizations'],
     pricingModel: 'AWS Artifact is offered at no additional charge.',
-    iconPath: '/icons/security/artifact.svg',
+    iconPath: './icons/security/artifact.svg',
   },
   {
     id: 'cloudhsm',
@@ -458,7 +458,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['kms', 'secrets-manager'],
     pricingModel: 'Pay an hourly fee per HSM instance provisioned.',
-    iconPath: '/icons/security/cloudhsm.svg',
+    iconPath: './icons/security/cloudhsm.svg',
   },
   {
     id: 'detective',
@@ -485,7 +485,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['guardduty', 'security-hub'],
     pricingModel: 'Pay based on the volume of data ingested from CloudTrail, VPC Flow Logs, and GuardDuty findings.',
-    iconPath: '/icons/security/detective.svg',
+    iconPath: './icons/security/detective.svg',
   },
   {
     id: 'resource-access-manager',
@@ -512,7 +512,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['organizations', 'transit-gateway', 'vpc'],
     pricingModel: 'AWS Resource Access Manager is offered at no additional charge.',
-    iconPath: '/icons/security/resource-access-manager.svg',
+    iconPath: './icons/security/resource-access-manager.svg',
   },
   {
     id: 'firewall-manager',
@@ -539,7 +539,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['waf', 'shield', 'network-firewall', 'organizations'],
     pricingModel: 'Pay a monthly fee per policy per account, in addition to charges for the underlying WAF/Shield/Network Firewall resources.',
-    iconPath: '/icons/security/firewall-manager.svg',
+    iconPath: './icons/security/firewall-manager.svg',
   },
   {
     id: 'audit-manager',
@@ -566,7 +566,7 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['artifact', 'security-hub', 'control-tower'],
     pricingModel: 'Pay per control assessed per account per month.',
-    iconPath: '/icons/security/audit-manager.svg',
+    iconPath: './icons/security/audit-manager.svg',
   },
   {
     id: 'verified-permissions',
@@ -593,6 +593,6 @@ export const SECURITY_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cognito', 'iam'],
     pricingModel: 'Pay per authorization decision (API request) made.',
-    iconPath: '/icons/security/verified-permissions.svg',
+    iconPath: './icons/security/verified-permissions.svg',
   },
 ];

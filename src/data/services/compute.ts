@@ -26,7 +26,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ebs', 'elastic-load-balancing', 'ec2-auto-scaling'],
     pricingModel: 'Pay per instance-hour/second; also Reserved, Savings Plans, and Spot pricing.',
-    iconPath: '/icons/compute/ec2.svg',
+    iconPath: './icons/compute/ec2.svg',
   },
   {
     id: 'lambda',
@@ -53,7 +53,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['api-gateway', 'dynamodb', 'eventbridge'],
     pricingModel: 'Pay per request and per GB-second of compute duration; free tier included.',
-    iconPath: '/icons/compute/lambda.svg',
+    iconPath: './icons/compute/lambda.svg',
   },
   {
     id: 'elastic-beanstalk',
@@ -78,7 +78,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'rds', 'ec2-auto-scaling'],
     pricingModel: 'No additional charge; billed only for underlying resources (EC2, RDS, etc.) it provisions.',
-    iconPath: '/icons/compute/elastic-beanstalk.svg',
+    iconPath: './icons/compute/elastic-beanstalk.svg',
   },
   {
     id: 'lightsail',
@@ -105,7 +105,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'elastic-beanstalk', 'route-53'],
     pricingModel: 'Flat monthly bundles covering compute, storage, and a data transfer allowance.',
-    iconPath: '/icons/compute/lightsail.svg',
+    iconPath: './icons/compute/lightsail.svg',
   },
   {
     id: 'batch',
@@ -132,7 +132,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'fargate', 'ecs'],
     pricingModel: 'No additional charge; billed only for the underlying compute resources used.',
-    iconPath: '/icons/compute/batch.svg',
+    iconPath: './icons/compute/batch.svg',
   },
   {
     id: 'outposts',
@@ -159,7 +159,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'local-zones', 'wavelength'],
     pricingModel: 'Fixed-term capacity pricing for the physical rack/server, paid upfront or monthly.',
-    iconPath: '/icons/compute/outposts.svg',
+    iconPath: './icons/compute/outposts.svg',
   },
   {
     id: 'app-runner',
@@ -185,7 +185,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ecs', 'fargate', 'ecr'],
     pricingModel: 'Pay per vCPU and memory consumed while the app is running/provisioned, plus build minutes.',
-    iconPath: '/icons/compute/app-runner.svg',
+    iconPath: './icons/compute/app-runner.svg',
   },
   {
     id: 'ec2-auto-scaling',
@@ -212,7 +212,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'elastic-load-balancing', 'cloudwatch'],
     pricingModel: 'No additional charge for the service; billed for the EC2 instances it launches.',
-    iconPath: '/icons/compute/ec2-auto-scaling.svg',
+    iconPath: './icons/compute/ec2-auto-scaling.svg',
   },
   {
     id: 'ec2-image-builder',
@@ -238,7 +238,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'ecr', 'systems-manager'],
     pricingModel: 'No additional charge for the service; billed for underlying build/test resources consumed.',
-    iconPath: '/icons/compute/ec2-image-builder.svg',
+    iconPath: './icons/compute/ec2-image-builder.svg',
   },
   {
     id: 'wavelength',
@@ -264,7 +264,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'local-zones', 'outposts'],
     pricingModel: 'Standard EC2/EBS pricing for resources deployed within the Wavelength Zone, billed via the parent Region.',
-    iconPath: '/icons/compute/wavelength.svg',
+    iconPath: './icons/compute/wavelength.svg',
   },
   {
     id: 'local-zones',
@@ -289,7 +289,7 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'outposts', 'wavelength'],
     pricingModel: 'Standard EC2/EBS pricing for resources deployed in the Local Zone, billed via the parent Region.',
-    iconPath: '/icons/compute/local-zones.svg',
+    iconPath: './icons/compute/local-zones.svg',
   },
   {
     id: 'serverless-application-repository',
@@ -314,6 +314,6 @@ export const COMPUTE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['lambda', 'cloudformation', 'api-gateway'],
     pricingModel: 'No charge for the repository itself; billed for the underlying resources (e.g., Lambda) the deployed application creates.',
-    iconPath: '/icons/compute/serverless-application-repository.svg',
+    iconPath: './icons/compute/serverless-application-repository.svg',
   },
 ];

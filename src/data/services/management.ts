@@ -26,7 +26,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudtrail', 'sns', 'ec2-auto-scaling', 'systems-manager'],
     pricingModel: 'Pay per metric, alarm, dashboard, and log data ingested/stored, with a free tier for basic metrics.',
-    iconPath: '/icons/management/cloudwatch.svg',
+    iconPath: './icons/management/cloudwatch.svg',
   },
   {
     id: 'cloudtrail',
@@ -53,7 +53,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudwatch', 's3', 'aws-config'],
     pricingModel: 'One copy of management events is free; additional trails, data events, and Insights incur charges.',
-    iconPath: '/icons/management/cloudtrail.svg',
+    iconPath: './icons/management/cloudtrail.svg',
   },
   {
     id: 'aws-config',
@@ -80,7 +80,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudtrail', 'cloudwatch', 'systems-manager'],
     pricingModel: 'Pay per configuration item recorded and per active Config rule evaluation.',
-    iconPath: '/icons/management/aws-config.svg',
+    iconPath: './icons/management/aws-config.svg',
   },
   {
     id: 'systems-manager',
@@ -107,7 +107,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'cloudwatch', 'kms', 'aws-config'],
     pricingModel: 'Most Systems Manager capabilities are offered at no additional charge; some advanced features incur usage-based charges.',
-    iconPath: '/icons/management/systems-manager.svg',
+    iconPath: './icons/management/systems-manager.svg',
   },
   {
     id: 'trusted-advisor',
@@ -134,7 +134,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['compute-optimizer', 'cost-explorer', 'organizations'],
     pricingModel: 'Core checks are free for all accounts; full checks require a Business or Enterprise Support plan.',
-    iconPath: '/icons/management/trusted-advisor.svg',
+    iconPath: './icons/management/trusted-advisor.svg',
   },
   {
     id: 'cloudformation',
@@ -161,7 +161,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['service-catalog', 'proton', 'systems-manager'],
     pricingModel: 'No additional charge for CloudFormation itself; you pay only for the AWS resources it creates.',
-    iconPath: '/icons/management/cloudformation.svg',
+    iconPath: './icons/management/cloudformation.svg',
   },
   {
     id: 'service-catalog',
@@ -188,7 +188,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudformation', 'organizations', 'iam'],
     pricingModel: 'No additional charge for Service Catalog itself; you pay only for the AWS resources provisioned.',
-    iconPath: '/icons/management/service-catalog.svg',
+    iconPath: './icons/management/service-catalog.svg',
   },
   {
     id: 'compute-optimizer',
@@ -215,7 +215,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['trusted-advisor', 'cloudwatch', 'cost-explorer'],
     pricingModel: 'AWS Compute Optimizer is offered at no additional charge.',
-    iconPath: '/icons/management/compute-optimizer.svg',
+    iconPath: './icons/management/compute-optimizer.svg',
   },
   {
     id: 'license-manager',
@@ -242,7 +242,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['systems-manager', 'ec2', 'organizations'],
     pricingModel: 'AWS License Manager is offered at no additional charge.',
-    iconPath: '/icons/management/license-manager.svg',
+    iconPath: './icons/management/license-manager.svg',
   },
   {
     id: 'well-architected-tool',
@@ -269,7 +269,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['trusted-advisor', 'compute-optimizer'],
     pricingModel: 'The AWS Well-Architected Tool is offered at no additional charge.',
-    iconPath: '/icons/management/well-architected-tool.svg',
+    iconPath: './icons/management/well-architected-tool.svg',
   },
   {
     id: 'resource-groups',
@@ -296,7 +296,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudformation', 'systems-manager', 'cloudwatch'],
     pricingModel: 'AWS Resource Groups is offered at no additional charge.',
-    iconPath: '/icons/management/resource-groups.svg',
+    iconPath: './icons/management/resource-groups.svg',
   },
   {
     id: 'budgets',
@@ -323,7 +323,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cost-explorer', 'cost-and-usage-report'],
     pricingModel: 'The first two action-enabled budgets per account are free; additional budgets incur a small daily charge.',
-    iconPath: '/icons/management/budgets.svg',
+    iconPath: './icons/management/budgets.svg',
   },
   {
     id: 'cost-explorer',
@@ -350,7 +350,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['budgets', 'cost-and-usage-report', 'trusted-advisor'],
     pricingModel: 'AWS Cost Explorer is offered at no additional charge.',
-    iconPath: '/icons/management/cost-explorer.svg',
+    iconPath: './icons/management/cost-explorer.svg',
   },
   {
     id: 'cost-and-usage-report',
@@ -377,7 +377,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cost-explorer', 'budgets', 's3'],
     pricingModel: 'The Cost and Usage Report itself is free; you pay only for the S3 storage and any analytics services used to query it.',
-    iconPath: '/icons/management/cost-and-usage-report.svg',
+    iconPath: './icons/management/cost-and-usage-report.svg',
   },
   {
     id: 'launch-wizard',
@@ -404,7 +404,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudformation', 'service-catalog'],
     pricingModel: 'No additional charge for Launch Wizard itself; you pay only for the AWS resources it provisions.',
-    iconPath: '/icons/management/launch-wizard.svg',
+    iconPath: './icons/management/launch-wizard.svg',
   },
   {
     id: 'proton',
@@ -431,7 +431,7 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudformation', 'service-catalog', 'ecs'],
     pricingModel: 'AWS Proton is offered at no additional charge; you pay only for the underlying AWS resources deployed.',
-    iconPath: '/icons/management/proton.svg',
+    iconPath: './icons/management/proton.svg',
   },
   {
     id: 'health-dashboard',
@@ -458,6 +458,6 @@ export const MANAGEMENT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['eventbridge', 'sns', 'trusted-advisor'],
     pricingModel: 'Basic Service Health Dashboard access is free; full personalized Health API access requires a Business or Enterprise Support plan.',
-    iconPath: '/icons/management/health-dashboard.svg',
+    iconPath: './icons/management/health-dashboard.svg',
   },
 ];

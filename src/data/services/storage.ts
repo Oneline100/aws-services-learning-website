@@ -26,7 +26,7 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['cloudfront', 's3-glacier', 'athena'],
     pricingModel: 'Pay per GB stored per month (varies by storage class), plus request and data transfer fees.',
-    iconPath: '/icons/storage/s3.svg',
+    iconPath: './icons/storage/s3.svg',
   },
   {
     id: 'ebs',
@@ -53,7 +53,7 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 's3', 'aws-backup'],
     pricingModel: 'Pay per GB-month provisioned (varies by volume type), plus provisioned IOPS/throughput charges.',
-    iconPath: '/icons/storage/ebs.svg',
+    iconPath: './icons/storage/ebs.svg',
   },
   {
     id: 'efs',
@@ -80,7 +80,7 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'ecs', 'lambda'],
     pricingModel: 'Pay per GB-month used (varies by storage class); no pre-provisioning required.',
-    iconPath: '/icons/storage/efs.svg',
+    iconPath: './icons/storage/efs.svg',
   },
   {
     id: 'fsx',
@@ -107,7 +107,7 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 's3', 'efs'],
     pricingModel: 'Pay per GB-month of storage provisioned, plus throughput capacity (varies by file system type).',
-    iconPath: '/icons/storage/fsx.svg',
+    iconPath: './icons/storage/fsx.svg',
   },
   {
     id: 's3-glacier',
@@ -134,7 +134,7 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'aws-backup', 'storage-gateway'],
     pricingModel: 'Pay per GB-month stored (lowest of all S3 classes), plus retrieval fees based on speed tier.',
-    iconPath: '/icons/storage/s3-glacier.svg',
+    iconPath: './icons/storage/s3-glacier.svg',
   },
   {
     id: 'aws-backup',
@@ -161,7 +161,7 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ebs', 'rds', 's3-glacier'],
     pricingModel: 'Pay per GB-month of backup storage consumed, plus cross-Region/account copy and restore fees.',
-    iconPath: '/icons/storage/aws-backup.svg',
+    iconPath: './icons/storage/aws-backup.svg',
   },
   {
     id: 'storage-gateway',
@@ -188,7 +188,7 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'ebs', 'datasync'],
     pricingModel: 'Pay for storage used in AWS plus the gateway appliance resources and data transfer.',
-    iconPath: '/icons/storage/storage-gateway.svg',
+    iconPath: './icons/storage/storage-gateway.svg',
   },
   {
     id: 'snow-family',
@@ -215,7 +215,7 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'storage-gateway', 'datasync'],
     pricingModel: 'Pay a service fee per device per job, plus data transfer fees for data moved into AWS.',
-    iconPath: '/icons/storage/snow-family.svg',
+    iconPath: './icons/storage/snow-family.svg',
   },
   {
     id: 'datasync',
@@ -242,7 +242,7 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'efs', 'storage-gateway'],
     pricingModel: 'Pay per GB of data copied by DataSync.',
-    iconPath: '/icons/storage/datasync.svg',
+    iconPath: './icons/storage/datasync.svg',
   },
   {
     id: 'elastic-disaster-recovery',
@@ -269,6 +269,6 @@ export const STORAGE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['ec2', 'ebs', 'aws-backup'],
     pricingModel: 'Pay per hour for each source server being replicated, plus the cost of staging area and recovery instance resources.',
-    iconPath: '/icons/storage/elastic-disaster-recovery.svg',
+    iconPath: './icons/storage/elastic-disaster-recovery.svg',
   },
 ];

@@ -26,7 +26,7 @@ export const MIGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['dms', 'ec2', 'migration-hub', 'application-discovery-service'],
     pricingModel: 'Free during the replication/testing period for the first 90 days per server; billed hourly per server after that window if still replicating.',
-    iconPath: '/icons/migration/application-migration-service.svg',
+    iconPath: './icons/migration/application-migration-service.svg',
   },
   {
     id: 'transfer-family',
@@ -53,7 +53,7 @@ export const MIGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'efs', 'datasync'],
     pricingModel: 'Pay an hourly fee per protocol endpoint enabled, plus a per-GB charge for data uploaded and downloaded.',
-    iconPath: '/icons/migration/transfer-family.svg',
+    iconPath: './icons/migration/transfer-family.svg',
   },
   {
     id: 'migration-hub',
@@ -80,7 +80,7 @@ export const MIGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['application-discovery-service', 'application-migration-service', 'dms'],
     pricingModel: 'AWS Migration Hub is offered at no additional charge; you pay only for the underlying migration tools and resources used.',
-    iconPath: '/icons/migration/migration-hub.svg',
+    iconPath: './icons/migration/migration-hub.svg',
   },
   {
     id: 'application-discovery-service',
@@ -107,6 +107,6 @@ export const MIGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['migration-hub', 'application-migration-service', 'dms'],
     pricingModel: 'AWS Application Discovery Service is offered at no additional charge.',
-    iconPath: '/icons/migration/application-discovery-service.svg',
+    iconPath: './icons/migration/application-discovery-service.svg',
   },
 ];

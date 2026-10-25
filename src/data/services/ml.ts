@@ -26,7 +26,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['bedrock', 's3', 'ec2'],
     pricingModel: 'Pay per instance-hour for notebooks, training, and hosting, based on the instance type used.',
-    iconPath: '/icons/ml/sagemaker.svg',
+    iconPath: './icons/ml/sagemaker.svg',
   },
   {
     id: 'rekognition',
@@ -53,7 +53,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'sagemaker'],
     pricingModel: 'Pay per image analyzed or per minute of video processed.',
-    iconPath: '/icons/ml/rekognition.svg',
+    iconPath: './icons/ml/rekognition.svg',
   },
   {
     id: 'comprehend',
@@ -80,7 +80,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['textract', 's3'],
     pricingModel: 'Pay per unit of text processed (per 100 characters), based on the feature used.',
-    iconPath: '/icons/ml/comprehend.svg',
+    iconPath: './icons/ml/comprehend.svg',
   },
   {
     id: 'lex',
@@ -107,7 +107,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['polly', 'transcribe'],
     pricingModel: 'Pay per text or speech request processed by the bot.',
-    iconPath: '/icons/ml/lex.svg',
+    iconPath: './icons/ml/lex.svg',
   },
   {
     id: 'polly',
@@ -134,7 +134,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['lex', 'transcribe'],
     pricingModel: 'Pay per million characters of text converted to speech.',
-    iconPath: '/icons/ml/polly.svg',
+    iconPath: './icons/ml/polly.svg',
   },
   {
     id: 'transcribe',
@@ -161,7 +161,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['polly', 'comprehend'],
     pricingModel: 'Pay per second of audio transcribed.',
-    iconPath: '/icons/ml/transcribe.svg',
+    iconPath: './icons/ml/transcribe.svg',
   },
   {
     id: 'translate',
@@ -188,7 +188,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['comprehend', 'transcribe', 'polly'],
     pricingModel: 'Pay per character of text translated.',
-    iconPath: '/icons/ml/translate.svg',
+    iconPath: './icons/ml/translate.svg',
   },
   {
     id: 'textract',
@@ -215,7 +215,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['comprehend', 's3'],
     pricingModel: 'Pay per page processed, based on the analysis features used (text, forms, or tables).',
-    iconPath: '/icons/ml/textract.svg',
+    iconPath: './icons/ml/textract.svg',
   },
   {
     id: 'personalize',
@@ -242,7 +242,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['sagemaker', 's3'],
     pricingModel: 'Pay based on data processed for training, inference requests served, and training hours used.',
-    iconPath: '/icons/ml/personalize.svg',
+    iconPath: './icons/ml/personalize.svg',
   },
   {
     id: 'forecast',
@@ -269,7 +269,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['sagemaker', 's3'],
     pricingModel: 'Pay based on data volume used for training and the number of forecast predictions generated.',
-    iconPath: '/icons/ml/forecast.svg',
+    iconPath: './icons/ml/forecast.svg',
   },
   {
     id: 'kendra',
@@ -296,7 +296,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['opensearch-service', 's3'],
     pricingModel: 'Pay an hourly rate per index edition (Developer or Enterprise), based on capacity and features.',
-    iconPath: '/icons/ml/kendra.svg',
+    iconPath: './icons/ml/kendra.svg',
   },
   {
     id: 'deepracer',
@@ -323,7 +323,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['sagemaker', 's3'],
     pricingModel: 'Pay for the SageMaker and simulation compute resources consumed during training; the physical car is a one-time hardware purchase.',
-    iconPath: '/icons/ml/deepracer.svg',
+    iconPath: './icons/ml/deepracer.svg',
   },
   {
     id: 'panorama',
@@ -350,7 +350,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['rekognition', 'sagemaker'],
     pricingModel: 'Pay for the Panorama appliance hardware plus a service fee per appliance per hour.',
-    iconPath: '/icons/ml/panorama.svg',
+    iconPath: './icons/ml/panorama.svg',
   },
   {
     id: 'healthlake',
@@ -377,7 +377,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['comprehend', 's3'],
     pricingModel: 'Pay based on the volume of health data stored and processed.',
-    iconPath: '/icons/ml/healthlake.svg',
+    iconPath: './icons/ml/healthlake.svg',
   },
   {
     id: 'bedrock',
@@ -404,7 +404,7 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['sagemaker', 'amazon-q'],
     pricingModel: 'Pay per token processed on-demand for input/output, or provisioned throughput pricing for consistent high-volume workloads.',
-    iconPath: '/icons/ml/bedrock.svg',
+    iconPath: './icons/ml/bedrock.svg',
   },
   {
     id: 'amazon-q',
@@ -431,6 +431,6 @@ export const ML_SERVICES: AWSService[] = [
     ],
     relatedServices: ['bedrock', 'kendra'],
     pricingModel: 'Pay a monthly per-user subscription fee, with different tiers for Q Business and Q Developer.',
-    iconPath: '/icons/ml/amazon-q.svg',
+    iconPath: './icons/ml/amazon-q.svg',
   },
 ];

@@ -26,7 +26,7 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-greengrass', 'iot-device-management', 'lambda', 'kinesis-data-streams'],
     pricingModel: 'Pay per million messages published/delivered, plus charges for device connectivity and registry/shadow usage.',
-    iconPath: '/icons/iot/iot-core.svg',
+    iconPath: './icons/iot/iot-core.svg',
   },
   {
     id: 'iot-greengrass',
@@ -53,7 +53,7 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-core', 'lambda', 'sagemaker'],
     pricingModel: 'Pay per connected device per month for Greengrass Core devices; no charge for the open-source edge runtime itself.',
-    iconPath: '/icons/iot/iot-greengrass.svg',
+    iconPath: './icons/iot/iot-greengrass.svg',
   },
   {
     id: 'iot-analytics',
@@ -80,7 +80,7 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-core', 'iot-sitewise', 'quicksight'],
     pricingModel: 'Pay based on the volume of messages processed and the data stored/queried within IoT Analytics.',
-    iconPath: '/icons/iot/iot-analytics.svg',
+    iconPath: './icons/iot/iot-analytics.svg',
   },
   {
     id: 'iot-device-defender',
@@ -107,7 +107,7 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-core', 'iot-device-management', 'cloudwatch'],
     pricingModel: 'Pay per device per month for audit checks and behavioral anomaly detection monitoring.',
-    iconPath: '/icons/iot/iot-device-defender.svg',
+    iconPath: './icons/iot/iot-device-defender.svg',
   },
   {
     id: 'iot-device-management',
@@ -134,7 +134,7 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-core', 'iot-device-defender', 'iot-greengrass'],
     pricingModel: 'Pay based on the number of fleet indexing operations, managed devices, and Jobs executions performed.',
-    iconPath: '/icons/iot/iot-device-management.svg',
+    iconPath: './icons/iot/iot-device-management.svg',
   },
   {
     id: 'iot-sitewise',
@@ -161,7 +161,7 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-core', 'iot-analytics', 'iot-twinmaker'],
     pricingModel: 'Pay based on the number of data streams collected, messages processed, and queries executed.',
-    iconPath: '/icons/iot/iot-sitewise.svg',
+    iconPath: './icons/iot/iot-sitewise.svg',
   },
   {
     id: 'iot-events',
@@ -188,7 +188,7 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-core', 'iot-sitewise', 'lambda'],
     pricingModel: 'Pay per message evaluated by detector models and per detector instance created.',
-    iconPath: '/icons/iot/iot-events.svg',
+    iconPath: './icons/iot/iot-events.svg',
   },
   {
     id: 'iot-fleetwise',
@@ -215,7 +215,7 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-core', 'iot-greengrass', 's3'],
     pricingModel: 'Pay based on the number of vehicles onboarded and the volume of vehicle data collected and transferred.',
-    iconPath: '/icons/iot/iot-fleetwise.svg',
+    iconPath: './icons/iot/iot-fleetwise.svg',
   },
   {
     id: 'iot-twinmaker',
@@ -242,7 +242,7 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-sitewise', 'iot-core', 'kinesis-data-streams'],
     pricingModel: 'Pay based on the number of queries, workspace data storage, and 3D scene usage within TwinMaker.',
-    iconPath: '/icons/iot/iot-twinmaker.svg',
+    iconPath: './icons/iot/iot-twinmaker.svg',
   },
   {
     id: 'freertos',
@@ -269,6 +269,6 @@ export const IOT_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-core', 'iot-greengrass'],
     pricingModel: 'FreeRTOS itself is free and open source; you pay only for the AWS IoT services (e.g., IoT Core) it connects to.',
-    iconPath: '/icons/iot/freertos.svg',
+    iconPath: './icons/iot/freertos.svg',
   },
 ];

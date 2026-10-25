@@ -26,7 +26,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'glue', 'quicksight', 'lake-formation'],
     pricingModel: 'Pay per terabyte of data scanned by each query; no charge when idle.',
-    iconPath: '/icons/analytics/athena.svg',
+    iconPath: './icons/analytics/athena.svg',
   },
   {
     id: 'emr',
@@ -53,7 +53,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'glue', 'kinesis-data-streams', 'ec2'],
     pricingModel: 'Pay per instance-hour for the underlying EC2 capacity, plus an additional EMR fee per instance-hour.',
-    iconPath: '/icons/analytics/emr.svg',
+    iconPath: './icons/analytics/emr.svg',
   },
   {
     id: 'glue',
@@ -80,7 +80,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['athena', 's3', 'lake-formation', 'redshift'],
     pricingModel: 'Pay per DPU-hour (Data Processing Unit) consumed by crawlers and ETL jobs.',
-    iconPath: '/icons/analytics/glue.svg',
+    iconPath: './icons/analytics/glue.svg',
   },
   {
     id: 'kinesis-data-streams',
@@ -107,7 +107,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['kinesis-data-firehose', 'kinesis-data-analytics', 'lambda', 'msk'],
     pricingModel: 'Pay per shard-hour (provisioned mode) or per data volume ingested/retrieved (on-demand mode), plus PUT payload fees.',
-    iconPath: '/icons/analytics/kinesis-data-streams.svg',
+    iconPath: './icons/analytics/kinesis-data-streams.svg',
   },
   {
     id: 'kinesis-data-firehose',
@@ -134,7 +134,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['kinesis-data-streams', 's3', 'redshift', 'opensearch-service'],
     pricingModel: 'Pay per GB of data ingested, with additional charges for format conversion or VPC delivery.',
-    iconPath: '/icons/analytics/kinesis-data-firehose.svg',
+    iconPath: './icons/analytics/kinesis-data-firehose.svg',
   },
   {
     id: 'kinesis-data-analytics',
@@ -161,7 +161,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['kinesis-data-streams', 'kinesis-data-firehose', 'lambda'],
     pricingModel: 'Pay per Kinesis Processing Unit (KPU) hour consumed while the application runs.',
-    iconPath: '/icons/analytics/kinesis-data-analytics.svg',
+    iconPath: './icons/analytics/kinesis-data-analytics.svg',
   },
   {
     id: 'quicksight',
@@ -188,7 +188,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['athena', 'redshift', 's3', 'rds'],
     pricingModel: 'Pay per user (Author or Reader) monthly subscription, or pay-per-session for occasional readers.',
-    iconPath: '/icons/analytics/quicksight.svg',
+    iconPath: './icons/analytics/quicksight.svg',
   },
   {
     id: 'redshift',
@@ -215,7 +215,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['athena', 'glue', 's3', 'quicksight'],
     pricingModel: 'Pay hourly per node for provisioned clusters, or per RPU-hour for Redshift Serverless.',
-    iconPath: '/icons/analytics/redshift.svg',
+    iconPath: './icons/analytics/redshift.svg',
   },
   {
     id: 'lake-formation',
@@ -242,7 +242,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['glue', 's3', 'athena', 'redshift'],
     pricingModel: 'No additional charge for Lake Formation itself; you pay for the underlying services it governs (S3, Glue, Athena, etc.).',
-    iconPath: '/icons/analytics/lake-formation.svg',
+    iconPath: './icons/analytics/lake-formation.svg',
   },
   {
     id: 'opensearch-service',
@@ -269,7 +269,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['kinesis-data-firehose', 'cloudwatch'],
     pricingModel: 'Pay hourly per instance/node and per GB of attached storage, or per OCU-hour for the serverless option.',
-    iconPath: '/icons/analytics/opensearch-service.svg',
+    iconPath: './icons/analytics/opensearch-service.svg',
   },
   {
     id: 'data-pipeline',
@@ -296,7 +296,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'dynamodb', 'emr', 'rds'],
     pricingModel: 'Pay based on how frequently pipeline activities and preconditions run (low or high frequency).',
-    iconPath: '/icons/analytics/data-pipeline.svg',
+    iconPath: './icons/analytics/data-pipeline.svg',
   },
   {
     id: 'msk',
@@ -323,7 +323,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['kinesis-data-streams', 'kinesis-data-analytics', 'lambda'],
     pricingModel: 'Pay hourly per broker instance and per GB-month of storage, or per cluster-hour for MSK Serverless.',
-    iconPath: '/icons/analytics/msk.svg',
+    iconPath: './icons/analytics/msk.svg',
   },
   {
     id: 'datazone',
@@ -350,7 +350,7 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['glue', 'lake-formation', 'redshift'],
     pricingModel: 'Pay based on usage of the DataZone domain, including metering of data assets published and consumed.',
-    iconPath: '/icons/analytics/datazone.svg',
+    iconPath: './icons/analytics/datazone.svg',
   },
   {
     id: 'clean-rooms',
@@ -377,6 +377,6 @@ export const ANALYTICS_SERVICES: AWSService[] = [
     ],
     relatedServices: ['s3', 'glue', 'athena'],
     pricingModel: 'Pay per query based on the amount of data processed across the collaborating datasets.',
-    iconPath: '/icons/analytics/clean-rooms.svg',
+    iconPath: './icons/analytics/clean-rooms.svg',
   },
 ];

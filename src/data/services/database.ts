@@ -26,7 +26,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['aurora', 'rds-proxy', 'dms'],
     pricingModel: 'Pay per instance-hour (by instance class), storage GB-month, and I/O or backup storage as applicable.',
-    iconPath: '/icons/database/rds.svg',
+    iconPath: './icons/database/rds.svg',
   },
   {
     id: 'dynamodb',
@@ -53,7 +53,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['lambda', 'api-gateway'],
     pricingModel: 'Pay per read/write request unit (on-demand) or provisioned capacity unit-hour, plus storage GB-month.',
-    iconPath: '/icons/database/dynamodb.svg',
+    iconPath: './icons/database/dynamodb.svg',
   },
   {
     id: 'aurora',
@@ -80,7 +80,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['rds', 'rds-proxy', 'lambda'],
     pricingModel: 'Pay per instance-hour (or ACU-hour for Serverless v2) plus storage and I/O consumed.',
-    iconPath: '/icons/database/aurora.svg',
+    iconPath: './icons/database/aurora.svg',
   },
   {
     id: 'elasticache',
@@ -107,7 +107,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['rds', 'dynamodb', 'memorydb'],
     pricingModel: 'Pay per node-hour based on node type, plus backup storage for Redis snapshots.',
-    iconPath: '/icons/database/elasticache.svg',
+    iconPath: './icons/database/elasticache.svg',
   },
   {
     id: 'neptune',
@@ -134,7 +134,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['rds', 'documentdb', 'dynamodb'],
     pricingModel: 'Pay per instance-hour based on instance class, plus storage I/O and backup storage consumed.',
-    iconPath: '/icons/database/neptune.svg',
+    iconPath: './icons/database/neptune.svg',
   },
   {
     id: 'documentdb',
@@ -161,7 +161,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['dynamodb', 'rds', 'dms'],
     pricingModel: 'Pay per instance-hour based on instance class, plus storage GB-month and I/O consumed.',
-    iconPath: '/icons/database/documentdb.svg',
+    iconPath: './icons/database/documentdb.svg',
   },
   {
     id: 'keyspaces',
@@ -188,7 +188,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['dynamodb', 'documentdb', 'dms'],
     pricingModel: 'Pay per read/write request unit (on-demand or provisioned) plus storage GB-month.',
-    iconPath: '/icons/database/keyspaces.svg',
+    iconPath: './icons/database/keyspaces.svg',
   },
   {
     id: 'timestream',
@@ -215,7 +215,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['iot-core', 'dynamodb', 'rds'],
     pricingModel: 'Pay per GB of data written, memory store GB-hour, magnetic store GB-month, and queries processed.',
-    iconPath: '/icons/database/timestream.svg',
+    iconPath: './icons/database/timestream.svg',
   },
   {
     id: 'qldb',
@@ -242,7 +242,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['dynamodb', 'rds', 'managed-blockchain'],
     pricingModel: 'Pay per million I/O requests, journal storage GB-month, and indexed storage GB-month.',
-    iconPath: '/icons/database/qldb.svg',
+    iconPath: './icons/database/qldb.svg',
   },
   {
     id: 'dms',
@@ -269,7 +269,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['rds', 'aurora', 'dynamodb'],
     pricingModel: 'Pay per replication instance-hour used during the migration task.',
-    iconPath: '/icons/database/dms.svg',
+    iconPath: './icons/database/dms.svg',
   },
   {
     id: 'rds-proxy',
@@ -296,7 +296,7 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['rds', 'aurora', 'lambda'],
     pricingModel: 'Pay per vCPU-hour of the associated database instance while the proxy is provisioned.',
-    iconPath: '/icons/database/rds-proxy.svg',
+    iconPath: './icons/database/rds-proxy.svg',
   },
   {
     id: 'memorydb',
@@ -323,6 +323,6 @@ export const DATABASE_SERVICES: AWSService[] = [
     ],
     relatedServices: ['elasticache', 'dynamodb', 'rds'],
     pricingModel: 'Pay per node-hour based on node type, plus data written to the transactional log.',
-    iconPath: '/icons/database/memorydb.svg',
+    iconPath: './icons/database/memorydb.svg',
   },
 ];
