@@ -38,7 +38,7 @@ export default function DiagramCanvas({ demo, onSelectService }: DiagramCanvasPr
 
   return (
     <div className={styles.wrapper}>
-      <ReactFlow nodes={nodes} edges={edges} nodeTypes={nodeTypes} fitView>
+      <ReactFlow nodes={nodes} edges={edges} nodeTypes={nodeTypes} fitView nodesDraggable={false}>
         <Background />
         <Controls />
       </ReactFlow>
