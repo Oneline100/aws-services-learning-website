@@ -13,6 +13,7 @@ import { DEVELOPER_TOOLS_SERVICES } from './developerTools';
 import { MIGRATION_SERVICES } from './migration';
 import { MEDIA_SERVICES } from './media';
 import { IOT_SERVICES } from './iot';
+import { MISC_SERVICES } from './misc';
 
 export const ALL_SERVICES: AWSService[] = [
   ...COMPUTE_SERVICES,
@@ -29,6 +30,7 @@ export const ALL_SERVICES: AWSService[] = [
   ...MIGRATION_SERVICES,
   ...MEDIA_SERVICES,
   ...IOT_SERVICES,
+  ...MISC_SERVICES,
 ];
 
 export function getServiceById(id: string): AWSService | undefined {

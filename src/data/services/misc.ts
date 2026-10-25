@@ -1,0 +1,328 @@
+import type { AWSService } from '../../types/service';
+
+export const MISC_SERVICES: AWSService[] = [
+  {
+    id: 'managed-blockchain',
+    name: 'Amazon Managed Blockchain',
+    category: 'Other',
+    tagline: 'Fully managed service for creating and managing scalable blockchain networks.',
+    description:
+      'Amazon Managed Blockchain is a fully managed service that lets you create and manage scalable blockchain networks using popular open-source frameworks, removing the heavy lifting of provisioning nodes, managing certificates, and configuring networks required to build blockchain applications.',
+    keyFeatures: [
+      'Supports Hyperledger Fabric for private, permissioned blockchain networks shared across known members',
+      'Managed Blockchain Query lets you access multi-blockchain network data (e.g., Bitcoin, Ethereum) without running your own nodes',
+      'Automatically scales the network to support applications with millions of transactions',
+      'Handles node provisioning, certificate management, and network configuration on your behalf',
+    ],
+    useCases: [
+      'Building a permissioned blockchain network shared among known business partners (e.g., supply chain tracking)',
+      'Querying public blockchain network data without the operational overhead of running full nodes',
+      'Creating an immutable, shared transaction ledger across multiple organizations without a central authority',
+    ],
+    examNotes: [
+      'Managed Blockchain is distinct from Amazon QLDB: Managed Blockchain is for multi-party, decentralized networks with no single trusted owner, while QLDB is a single-owner centralized ledger database',
+      'Supports Hyperledger Fabric for permissioned, private networks among known members',
+      'A common exam distractor pairs this with QLDB — remember "decentralized/multi-party trust" points to Managed Blockchain, "centralized ledger, single owner" points to QLDB',
+    ],
+    relatedServices: ['qldb', 'dynamodb'],
+    pricingModel: 'Pay for network membership, peer node usage (per hour), and data storage/transferred within the blockchain network.',
+    iconPath: '/icons/other/managed-blockchain.svg',
+  },
+  {
+    id: 'braket',
+    name: 'Amazon Braket',
+    category: 'Other',
+    tagline: 'Fully managed quantum computing service for exploring and building quantum algorithms.',
+    description:
+      'Amazon Braket is a fully managed quantum computing service that helps researchers and developers get started with quantum computing by providing a single environment to design, test, and run quantum algorithms on simulators and multiple quantum hardware providers.',
+    keyFeatures: [
+      'Provides access to quantum hardware from multiple third-party providers (e.g., IonQ, Rigetti) through one unified service',
+      'Includes classical simulators for testing quantum circuits before running on actual quantum hardware',
+      'Jupyter notebook-based development environment simplifies writing and running quantum algorithms',
+      'Hybrid jobs feature lets you combine classical and quantum compute for hybrid algorithms',
+    ],
+    useCases: [
+      'Researching and prototyping quantum algorithms without purchasing or managing quantum hardware',
+      'Comparing the performance of a quantum algorithm across simulators and different quantum hardware providers',
+      'Running hybrid quantum-classical workloads for optimization or machine learning research',
+    ],
+    examNotes: [
+      'Braket is a highly niche, emerging-technology service — exam questions typically only test recognizing it as "AWS\'s quantum computing service," not deep configuration detail',
+      'It provides access to multiple third-party quantum hardware providers through a single managed interface, rather than AWS building its own quantum hardware',
+      'Pair mentally with other emerging-tech/specialized AWS offerings (e.g., Ground Station, RoboMaker) that are more about recognition than deep operational knowledge',
+    ],
+    relatedServices: ['sagemaker'],
+    pricingModel: 'Pay per simulator task-second for simulators, plus per-shot and per-hour charges when using actual quantum hardware.',
+    iconPath: '/icons/other/braket.svg',
+  },
+  {
+    id: 'ground-station',
+    name: 'AWS Ground Station',
+    category: 'Other',
+    tagline: 'Fully managed service to control satellite communications, process data, and scale operations.',
+    description:
+      'AWS Ground Station is a fully managed service that lets you control satellite communications, process data, and scale your satellite operations without having to build or manage your own ground station infrastructure, using a global network of antennas integrated with AWS.',
+    keyFeatures: [
+      'Provides on-demand access to a global network of satellite ground station antennas',
+      'Downlinked satellite data can be streamed directly into AWS services (e.g., S3, EC2) for processing',
+      'Eliminates the need to build, operate, or maintain physical ground station antenna infrastructure',
+      'Pay-as-you-go model lets satellite operators schedule contacts only when needed',
+    ],
+    useCases: [
+      'Downlinking and processing Earth observation satellite imagery directly into AWS for analysis',
+      'Scaling satellite communication operations up or down without owning physical ground infrastructure',
+      'Running time-sensitive satellite data pipelines that feed directly into AWS compute and storage',
+    ],
+    examNotes: [
+      'Ground Station is a niche, satellite-specific service — recognize it as "satellite communication as a service," distinct from general networking services',
+      'It directly streams downlinked data into AWS services, enabling an end-to-end satellite-data pipeline without separate ground infrastructure',
+      'Expect only surface-level recognition questions on the exam for this service, given its specialized use case',
+    ],
+    relatedServices: ['s3', 'ec2'],
+    pricingModel: 'Pay per minute of antenna usage during a scheduled satellite contact; no upfront or long-term commitment required.',
+    iconPath: '/icons/other/ground-station.svg',
+  },
+  {
+    id: 'robomaker',
+    name: 'AWS RoboMaker',
+    category: 'Other',
+    tagline: 'Cloud service for simulating, testing, and deploying intelligent robotics applications.',
+    description:
+      'AWS RoboMaker is a service that makes it easier to develop, simulate, test, and deploy intelligent robotics applications at scale, extending the popular Robot Operating System (ROS) framework with cloud services such as simulation, fleet management, and machine learning.',
+    keyFeatures: [
+      'Cloud-based simulation lets teams test robot applications in realistic 3D environments before physical deployment',
+      'Built on and extends the open-source Robot Operating System (ROS) framework developers already use',
+      'Fleet management capabilities allow deploying and managing software updates across many physical robots',
+      'Integrates with other AWS services (e.g., Lambda, SageMaker) to add cloud-based intelligence to robots',
+    ],
+    useCases: [
+      'Running large-scale, parallel robotics simulations in the cloud to test application logic before deployment',
+      'Deploying software updates consistently across a fleet of physical robots in the field',
+      'Adding cloud-based machine learning inference capabilities to robotics applications',
+    ],
+    examNotes: [
+      'RoboMaker is a specialized robotics development/simulation service built around the open-source ROS framework — recognize the ROS connection as the key identifier',
+      'Cloud-based simulation at scale (running many simulations in parallel) is the main value proposition versus testing only on physical hardware',
+      'A niche exam-recognition service; deep configuration detail is unlikely to be tested',
+    ],
+    relatedServices: ['lambda', 'sagemaker', 'iot-greengrass'],
+    pricingModel: 'Pay for simulation usage (per vCPU-hour) and the underlying compute/storage resources consumed during development and fleet management.',
+    iconPath: '/icons/other/robomaker.svg',
+  },
+  {
+    id: 'gamelift',
+    name: 'Amazon GameLift',
+    category: 'Other',
+    tagline: 'Dedicated game server hosting that automatically scales to meet player demand.',
+    description:
+      'Amazon GameLift is a dedicated game server hosting solution that deploys, operates, and scales cloud servers for session-based multiplayer games, automatically managing capacity to meet player demand without requiring game developers to build their own hosting infrastructure.',
+    keyFeatures: [
+      'Automatically scales dedicated game server capacity up or down based on real-time player demand',
+      'Low-latency matchmaking (FlexMatch) places players into optimal game sessions based on configurable rules',
+      'Supports both managed EC2-based hosting and container-based (GameLift Anywhere/containers) deployment options',
+      'Provides built-in health monitoring and automatically replaces unhealthy game server instances',
+    ],
+    useCases: [
+      'Hosting dedicated servers for session-based multiplayer games that need to scale with unpredictable player counts',
+      'Matching players into balanced, low-latency game sessions using configurable matchmaking rules',
+      'Avoiding the operational overhead of building and managing custom game server infrastructure',
+    ],
+    examNotes: [
+      'GameLift is purpose-built for session-based multiplayer game server hosting — recognize it when a scenario mentions "game servers" or "player matchmaking"',
+      'FlexMatch (matchmaking) is the standout feature distinguishing GameLift from generic compute/auto-scaling services',
+      'It handles the specific scaling challenge of game servers (sudden spikes in concurrent player sessions) better than rolling your own EC2 Auto Scaling setup',
+    ],
+    relatedServices: ['ec2', 'ec2-auto-scaling'],
+    pricingModel: 'Pay for the compute resources (EC2 instance hours) used to host game sessions, with no separate GameLift service fee for standard hosting.',
+    iconPath: '/icons/other/gamelift.svg',
+  },
+  {
+    id: 'open-3d-engine',
+    name: 'Open 3D Engine (O3DE)',
+    category: 'Other',
+    tagline: 'Free, open-source, real-time 3D engine for building games and simulations.',
+    description:
+      'Open 3D Engine (O3DE) is a free, open-source, real-time 3D engine that developers can use to build games, film and television content, architectural visualizations, and robotics or autonomous-vehicle simulations, originally contributed by AWS and now governed by the Linux Foundation.',
+    keyFeatures: [
+      'Fully open-source under a permissive license, with no royalties or revenue-sharing requirements',
+      'Modular, component-based architecture lets developers use only the engine features they need',
+      'Supports high-fidelity real-time 3D rendering suitable for games, simulations, and visualizations',
+      'Integrates with AWS cloud services for multiplayer backend, analytics, and machine learning use cases',
+    ],
+    useCases: [
+      'Building AAA-quality 3D games without licensing fees associated with proprietary game engines',
+      'Creating high-fidelity robotics or autonomous-vehicle simulation environments',
+      'Producing architectural visualizations or film/television visual content using real-time 3D rendering',
+    ],
+    examNotes: [
+      'O3DE is an open-source project originally seeded by AWS, not a managed AWS cloud service you provision or pay AWS for directly — recognize it as "AWS-contributed open-source game engine"',
+      'It is governed by the Linux Foundation, so it is community-driven rather than an AWS product with a service console',
+      'Exam exposure is minimal/recognition-only; do not expect deep questions on configuring or operating it',
+    ],
+    relatedServices: ['gamelift', 'robomaker'],
+    pricingModel: 'Free and open source with no licensing or royalty fees; costs only arise from any AWS cloud resources used alongside it.',
+    iconPath: '/icons/other/open-3d-engine.svg',
+  },
+  {
+    id: 'workspaces',
+    name: 'Amazon WorkSpaces',
+    category: 'Other',
+    tagline: 'Managed, secure cloud desktop (Desktop-as-a-Service) accessible from any supported device.',
+    description:
+      'Amazon WorkSpaces is a fully managed, secure Desktop-as-a-Service (DaaS) solution that provisions cloud-based virtual Windows or Linux desktops, letting users access a consistent desktop experience from laptops, tablets, thin clients, or web browsers without managing underlying hardware.',
+    keyFeatures: [
+      'Provisions persistent, personalized virtual desktops (Windows or Linux) that users can access from multiple devices',
+      'Supports both monthly and hourly billing bundles to match different usage patterns',
+      'Integrates with existing on-premises Active Directory or AWS Managed Microsoft AD for user authentication',
+      'WorkSpaces Web variant provides secure, non-persistent browser-based access without a full desktop client',
+    ],
+    useCases: [
+      'Providing secure virtual desktops to a remote or distributed workforce without shipping physical hardware',
+      'Supporting contractors or temporary staff who need temporary, isolated desktop access',
+      'Replacing traditional VDI (virtual desktop infrastructure) deployments with a fully managed cloud alternative',
+    ],
+    examNotes: [
+      'WorkSpaces is AWS\'s DaaS (Desktop-as-a-Service) offering — the exam commonly contrasts it with AppStream 2.0, which streams individual applications rather than a full persistent desktop',
+      'Remember: WorkSpaces = full persistent virtual desktop; AppStream 2.0 = streamed individual applications (non-persistent, app-level)',
+      'Integrates with Active Directory for identity, a detail tested when scenarios mention centralized user management for virtual desktops',
+    ],
+    relatedServices: ['appstream-2-0', 'directory-service'],
+    pricingModel: 'Pay monthly per bundle or hourly based on usage, varying by desktop hardware bundle (CPU, memory, storage) selected.',
+    iconPath: '/icons/other/workspaces.svg',
+  },
+  {
+    id: 'appstream-2-0',
+    name: 'Amazon AppStream 2.0',
+    category: 'Other',
+    tagline: 'Fully managed application streaming service delivering desktop apps from the cloud.',
+    description:
+      'Amazon AppStream 2.0 is a fully managed application streaming service that lets you centrally manage desktop applications and securely deliver them to any computer, without rewriting the applications or managing the underlying infrastructure.',
+    keyFeatures: [
+      'Streams individual desktop applications to a web browser rather than providing a full persistent desktop',
+      'Centralizes application management and licensing, deploying updates once rather than to each end-user device',
+      'Scales streaming instances automatically based on user demand (fleet auto scaling)',
+      'Supports both always-on and on-demand fleet types to match cost and performance requirements',
+    ],
+    useCases: [
+      'Delivering specialized or legacy desktop software (e.g., engineering or design applications) to users without local installation',
+      'Providing secure access to internal applications for contractors or third parties without distributing the software itself',
+      'Centrally patching and updating a desktop application once instead of across many individual user devices',
+    ],
+    examNotes: [
+      'AppStream 2.0 streams individual applications (app-level, often non-persistent); WorkSpaces provides a full persistent virtual desktop — this distinction is the most commonly tested point for both services',
+      'Useful for delivering compute-intensive desktop software (e.g., CAD tools) to lower-powered client devices via streaming',
+      'Fleet auto scaling lets AppStream 2.0 handle variable concurrent user demand without manual capacity planning',
+    ],
+    relatedServices: ['workspaces'],
+    pricingModel: 'Pay for streaming instance usage (per hour) based on instance family/size, plus storage for user persistent data.',
+    iconPath: '/icons/other/appstream-2-0.svg',
+  },
+  {
+    id: 'workdocs',
+    name: 'Amazon WorkDocs',
+    category: 'Other',
+    tagline: 'Secure, fully managed content creation, storage, and collaboration service.',
+    description:
+      'Amazon WorkDocs is a secure, fully managed content creation, storage, and collaboration service that lets users easily create, edit, share, and review files, with built-in feedback and version-control capabilities for teams.',
+    keyFeatures: [
+      'Provides secure cloud file storage with built-in sharing, commenting, and feedback collection on documents',
+      'Automatic file versioning keeps track of document changes and revision history',
+      'Integrates with existing Active Directory for centralized user identity and access management',
+      'Accessible via web browser, desktop sync client, and mobile apps for cross-device collaboration',
+    ],
+    useCases: [
+      'Enabling teams to collaboratively review and comment on shared documents with full version history',
+      'Replacing on-premises file shares with secure, centrally managed cloud-based document storage',
+      'Providing a Dropbox/Google Drive-like collaboration experience fully managed within AWS',
+    ],
+    examNotes: [
+      'WorkDocs is AWS\'s managed file collaboration/storage service, distinct from S3 (general object storage) — WorkDocs is specifically end-user-facing document collaboration with built-in review/commenting features',
+      'It is a niche, lower-exam-weight service; recognize it mainly as the "secure document collaboration/content management" answer',
+      'Integrates with Directory Service/Active Directory for identity, similar to WorkSpaces and AppStream 2.0',
+    ],
+    relatedServices: ['workspaces', 'directory-service'],
+    pricingModel: 'Pay per user per month, with storage tiers based on gigabytes of storage needed per user.',
+    iconPath: '/icons/other/workdocs.svg',
+  },
+  {
+    id: 'chime',
+    name: 'Amazon Chime',
+    category: 'Other',
+    tagline: 'Communications service for online meetings, video conferencing, calls, and chat.',
+    description:
+      'Amazon Chime is a communications service that lets users meet, chat, and place business calls both inside and outside their organizations, using a single application for online meetings, video conferencing, calls, and secure messaging.',
+    keyFeatures: [
+      'Supports online meetings with video conferencing, screen sharing, and chat in a single application',
+      'Chime SDK allows developers to embed real-time audio, video, and messaging capabilities into their own applications',
+      'Business calling capabilities let organizations make and receive calls using Amazon Chime Voice Connector',
+      'Provides visual roster and "do not disturb" indicators to streamline meeting coordination',
+    ],
+    useCases: [
+      'Running internal and external business meetings, video calls, and chat from a single unified application',
+      'Embedding real-time video/audio/messaging capabilities into custom applications using the Chime SDK',
+      'Replacing traditional PBX phone systems with cloud-based Voice Connector business calling',
+    ],
+    examNotes: [
+      'Chime is AWS\'s unified communications (meetings, calls, chat) service — recognize the Chime SDK as the piece that lets you embed real-time communication into your own applications',
+      'It is distinct from Connect, which is specifically a contact center/customer service solution, not general business communications',
+      'A niche, recognition-level exam topic; the SDK vs. full application distinction is the most likely test point',
+    ],
+    relatedServices: ['connect', 'workmail'],
+    pricingModel: 'Pay per user per month for the Chime application, or pay-as-you-go for Chime SDK usage based on minutes of audio/video/messaging.',
+    iconPath: '/icons/other/chime.svg',
+  },
+  {
+    id: 'connect',
+    name: 'Amazon Connect',
+    category: 'Other',
+    tagline: 'Cloud-based contact center service for delivering customer service at scale.',
+    description:
+      'Amazon Connect is an easy-to-use, cloud-based contact center service that helps companies provide superior customer service at a lower cost, enabling omnichannel (voice, chat) customer interactions without upfront infrastructure investment and scaling to support any number of agents.',
+    keyFeatures: [
+      'Provides omnichannel support (voice and chat) for customer contact center interactions',
+      'Visual, no-code contact flow designer lets you build IVR (interactive voice response) call routing logic',
+      'Scales elastically to support variable numbers of concurrent contact center agents without capacity planning',
+      'Integrates with AWS AI services (e.g., Lex, Comprehend) for chatbots and sentiment/analytics on customer interactions',
+    ],
+    useCases: [
+      'Standing up a cloud-based customer service contact center without purchasing or managing on-premises hardware',
+      'Building automated IVR call-routing flows that direct customers to the right agent or self-service option',
+      'Analyzing customer interaction sentiment and trends using integrated AI/ML services',
+    ],
+    examNotes: [
+      'Connect is AWS\'s contact-center-as-a-service offering — recognize it when a scenario mentions "customer service," "call center," or "IVR"',
+      'It pairs naturally with Lex (conversational bots) and Comprehend (sentiment analysis) in exam scenarios about intelligent contact centers',
+      'Distinct from Chime, which is general-purpose business communications/meetings rather than customer-facing contact center operations',
+    ],
+    relatedServices: ['lex', 'comprehend', 'chime'],
+    pricingModel: 'Pay-as-you-go per minute of usage for calls/chats handled, with no upfront fees or long-term contracts.',
+    iconPath: '/icons/other/connect.svg',
+  },
+  {
+    id: 'workmail',
+    name: 'Amazon WorkMail',
+    category: 'Other',
+    tagline: 'Secure, managed business email and calendar service compatible with existing clients.',
+    description:
+      'Amazon WorkMail is a secure, managed business email and calendaring service that supports existing desktop and mobile email clients, giving organizations the flexibility to choose between web, desktop, and mobile email while retaining control over how email and data are managed and secured.',
+    keyFeatures: [
+      'Compatible with existing email clients (e.g., Microsoft Outlook) via standard protocols, requiring no client switch',
+      'Supports integration with existing on-premises Microsoft Exchange environments or AWS Managed Microsoft AD',
+      'Provides mobile device management policies for controlling email access from mobile devices',
+      'Encrypts email messages at rest and in transit, with configurable data residency by AWS Region',
+    ],
+    useCases: [
+      'Migrating a business off expensive on-premises Exchange infrastructure to a managed cloud alternative',
+      'Providing secure, encrypted business email with region-specific data residency requirements',
+      'Allowing employees to keep using familiar email clients (Outlook, mobile mail apps) with a managed backend',
+    ],
+    examNotes: [
+      'WorkMail is AWS\'s managed business email/calendar service — a niche offering mainly tested at the recognition level ("managed email that works with Outlook")',
+      'Compatibility with existing email clients via standard protocols is the key differentiator versus requiring a proprietary client',
+      'Often grouped with WorkSpaces/WorkDocs/Chime as part of AWS\'s End User Computing and productivity service family, all integrating with Directory Service',
+    ],
+    relatedServices: ['workspaces', 'workdocs', 'directory-service'],
+    pricingModel: 'Pay per user per month, which includes a set amount of mailbox storage per user.',
+    iconPath: '/icons/other/workmail.svg',
+  },
+];
