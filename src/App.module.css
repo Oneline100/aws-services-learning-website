@@ -1,43 +1,31 @@
 :global(:root) {
-  /* Blueprint — the core palette. Named, not improvised. */
-  --ink: #0b2545;       /* deep schematic navy — headers, dark surfaces */
-  --paper: #faf9f6;     /* warm sheet-paper background */
-  --graphite: #38424d;  /* body text */
-  --orange: #ff9900;    /* signal orange — the one saturated accent, spent on purpose */
-  --blueprint: #cbd9e8; /* hairlines, dot-grid, quiet borders */
-  --cyan: #0fb5ba;      /* circuit cyan — motion, links, animated data */
+  --ink: #16213f;        /* headings, nav */
+  --paper: #f7f8fa;      /* page background */
+  --graphite: #3f4756;   /* body text */
+  --orange: #ff9900;     /* one accent, used sparingly */
+  --border: #e3e7ed;     /* card/divider lines */
+  --muted: #7a8699;      /* secondary text */
 
-  --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
 }
 
 :global(body) {
   margin: 0;
   font-family: var(--font-body);
-  background-color: var(--paper);
-  background-image:
-    radial-gradient(circle, var(--blueprint) 1px, transparent 1px);
-  background-size: 22px 22px;
-  background-attachment: fixed;
+  background: var(--paper);
   color: var(--graphite);
 }
 
 :global(h1),
 :global(h2),
 :global(h3) {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   color: var(--ink);
-  letter-spacing: -0.01em;
+  font-weight: 700;
 }
 
 :global(button) {
   font-family: inherit;
-}
-
-:global(::selection) {
-  background: var(--orange);
-  color: var(--ink);
 }
 
 :global(:focus-visible) {

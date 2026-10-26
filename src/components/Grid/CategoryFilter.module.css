@@ -1,18 +1,16 @@
 .group {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .pill {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.01em;
-  padding: 0.4rem 0.7rem;
-  border: 1px solid var(--blueprint);
+  font-size: 0.82rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--border);
   border-radius: 999px;
   background: #ffffff;
   color: var(--graphite);
@@ -21,7 +19,7 @@
 }
 
 .pill:hover {
-  border-color: var(--cyan);
+  border-color: var(--orange);
 }
 
 .pillActive {

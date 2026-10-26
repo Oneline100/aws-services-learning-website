@@ -1,31 +1,15 @@
-.wrapper {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.prompt {
-  position: absolute;
-  left: 0.75rem;
-  font-family: var(--font-mono);
-  color: var(--cyan);
-  pointer-events: none;
-  font-size: 0.95rem;
-}
-
 .input {
-  font-family: var(--font-mono);
   font-size: 0.9rem;
-  padding: 0.55rem 0.9rem 0.55rem 1.8rem;
-  min-width: 220px;
-  border: 1px solid var(--blueprint);
-  border-radius: 3px;
+  padding: 0.6rem 1rem;
+  min-width: 240px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   background: #ffffff;
   color: var(--graphite);
 }
 
 .input::placeholder {
-  color: #8fa1b3;
+  color: var(--muted);
 }
 
 .input:focus {

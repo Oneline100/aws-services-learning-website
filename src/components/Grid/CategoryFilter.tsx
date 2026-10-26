@@ -16,7 +16,7 @@ export default function CategoryFilter({ selected, onSelect }: CategoryFilterPro
         onClick={() => onSelect(null)}
         aria-pressed={selected === null}
       >
-        all
+        All
       </button>
       {CATEGORIES.map((category) => (
         <button
@@ -27,7 +27,7 @@ export default function CategoryFilter({ selected, onSelect }: CategoryFilterPro
           aria-pressed={selected === category}
         >
           <span className={styles.dot} style={{ backgroundColor: categoryColor(category) }} aria-hidden="true" />
-          {category.toLowerCase()}
+          {category}
         </button>
       ))}
     </div>

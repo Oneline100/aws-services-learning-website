@@ -5,7 +5,6 @@ export default function TopNav() {
   return (
     <nav className={styles.nav}>
       <div className={styles.brand}>
-        <span className={styles.eyebrow}>§ EXAM PREP</span>
         <span className={styles.title}>AWS Services Explorer</span>
       </div>
       <NavLink

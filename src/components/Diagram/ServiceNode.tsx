@@ -21,9 +21,6 @@ export default function ServiceNode({ data }: NodeProps<ServiceNodeData>) {
       onClick={() => data.onSelect(data.serviceId)}
     >
       <Handle type="target" position={Position.Left} />
-      <span className={styles.nodeTag} aria-hidden="true">
-        {service.id}
-      </span>
       <img
         src={service.iconPath}
         alt={service.name}

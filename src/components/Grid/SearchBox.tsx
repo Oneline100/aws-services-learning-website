@@ -7,18 +7,13 @@ interface SearchBoxProps {
 
 export default function SearchBox({ value, onChange }: SearchBoxProps) {
   return (
-    <div className={styles.wrapper}>
-      <span className={styles.prompt} aria-hidden="true">
-        &gt;
-      </span>
-      <input
-        type="text"
-        placeholder="search services…"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        aria-label="Search AWS services"
-        className={styles.input}
-      />
-    </div>
+    <input
+      type="text"
+      placeholder="Search services..."
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      aria-label="Search AWS services"
+      className={styles.input}
+    />
   );
 }

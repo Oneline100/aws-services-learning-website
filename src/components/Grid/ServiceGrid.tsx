@@ -42,9 +42,6 @@ export default function ServiceGrid({ onSelectService }: ServiceGridProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25, delay: Math.min(index * 0.02, 0.4) }}
           >
-            <span className={styles.tag} aria-hidden="true">
-              {service.id}
-            </span>
             <img
               src={service.iconPath}
               alt={service.name}

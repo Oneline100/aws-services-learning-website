@@ -32,10 +32,10 @@ export default function DiagramCanvas({ demo, onSelectService }: DiagramCanvasPr
         target: edge.target,
         label: edge.label,
         animated: edge.animated,
-        style: { stroke: '#0fb5ba', strokeWidth: 2 },
-        labelStyle: { fontFamily: 'var(--font-mono)', fontSize: 11, fill: '#0b2545' },
-        labelBgStyle: { fill: '#faf9f6', fillOpacity: 0.9 },
-        markerEnd: { type: MarkerType.ArrowClosed, color: '#0fb5ba' },
+        style: { stroke: '#ff9900', strokeWidth: 1.75 },
+        labelStyle: { fontSize: 11, fill: '#16213f' },
+        labelBgStyle: { fill: '#ffffff', fillOpacity: 0.9 },
+        markerEnd: { type: MarkerType.ArrowClosed, color: '#ff9900' },
       })),
     [demo]
   );
@@ -43,7 +43,7 @@ export default function DiagramCanvas({ demo, onSelectService }: DiagramCanvasPr
   return (
     <div className={styles.wrapper}>
       <ReactFlow nodes={nodes} edges={edges} nodeTypes={nodeTypes} fitView nodesDraggable={false}>
-        <Background color="#cbd9e8" gap={22} size={1.4} />
+        <Background color="#e3e7ed" gap={24} size={1} />
         <Controls />
       </ReactFlow>
     </div>

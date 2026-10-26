@@ -1,56 +1,38 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
-  padding: 0.9rem 2rem;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
   background: var(--ink);
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
-  border-bottom: 2px solid var(--orange);
   color: #ffffff;
 }
 
 .brand {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
   margin-right: auto;
 }
 
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--orange);
-}
-
 .title {
-  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: -0.01em;
+  font-size: 1.1rem;
   color: #ffffff;
 }
 
 .link {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
-  color: #aebdd1;
+  color: #c7cedb;
   text-decoration: none;
-  padding: 0.45rem 0.85rem;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .link:hover {
-  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.08);
   color: #ffffff;
 }
 
 .linkActive {
-  background-color: rgba(255, 153, 0, 0.12);
-  border-color: var(--orange);
-  color: var(--orange);
+  background-color: var(--orange);
+  color: #16213f;
+  font-weight: 600;
 }

@@ -31,16 +31,13 @@ export default function ServiceModal({ service, onClose, onNavigateToService }: 
             transition={{ duration: 0.2 }}
           >
             <div className={styles.header}>
-              <div className={styles.iconChip}>
-                <img
-                  src={service.iconPath}
-                  alt={service.name}
-                  className={styles.icon}
-                  onError={handleIconError}
-                />
-              </div>
+              <img
+                src={service.iconPath}
+                alt={service.name}
+                className={styles.icon}
+                onError={handleIconError}
+              />
               <div className={styles.headerText}>
-                <span className={styles.id}>{service.id}</span>
                 <h2>{service.name}</h2>
                 <p className={styles.tagline}>{service.tagline}</p>
               </div>
@@ -51,17 +48,17 @@ export default function ServiceModal({ service, onClose, onNavigateToService }: 
 
             <div className={styles.body}>
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>01 — Category</div>
+                <div className={styles.sectionTitle}>Category</div>
                 <p>{service.category}</p>
               </div>
 
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>02 — Description</div>
+                <div className={styles.sectionTitle}>Description</div>
                 <p>{service.description}</p>
               </div>
 
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>03 — Key Features</div>
+                <div className={styles.sectionTitle}>Key Features</div>
                 <ul>
                   {service.keyFeatures.map((feature) => (
                     <li key={feature}>{feature}</li>
@@ -70,7 +67,7 @@ export default function ServiceModal({ service, onClose, onNavigateToService }: 
               </div>
 
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>04 — Common Use Cases</div>
+                <div className={styles.sectionTitle}>Common Use Cases</div>
                 <ul>
                   {service.useCases.map((useCase) => (
                     <li key={useCase}>{useCase}</li>
@@ -79,7 +76,7 @@ export default function ServiceModal({ service, onClose, onNavigateToService }: 
               </div>
 
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>05 — Exam Notes</div>
+                <div className={styles.sectionTitle}>Exam Notes</div>
                 <ul>
                   {service.examNotes.map((note) => (
                     <li key={note}>{note}</li>
@@ -88,7 +85,7 @@ export default function ServiceModal({ service, onClose, onNavigateToService }: 
               </div>
 
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>06 — Related Services</div>
+                <div className={styles.sectionTitle}>Related Services</div>
                 {service.relatedServices.map((relatedId) => {
                   const related = getServiceById(relatedId);
                   if (!related) return null;
@@ -106,7 +103,7 @@ export default function ServiceModal({ service, onClose, onNavigateToService }: 
               </div>
 
               <div className={styles.section}>
-                <div className={styles.sectionTitle}>07 — Pricing Model</div>
+                <div className={styles.sectionTitle}>Pricing Model</div>
                 <p className={styles.pricing}>{service.pricingModel}</p>
               </div>
             </div>

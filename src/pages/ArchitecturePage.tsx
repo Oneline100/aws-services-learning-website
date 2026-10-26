@@ -23,16 +23,15 @@ export default function ArchitecturePage() {
       className={styles.page}
     >
       <aside className={styles.sidebar}>
-        <div className={styles.sidebarTitle}>§ 14 Demos</div>
+        <div className={styles.sidebarTitle}>Architecture Demos</div>
         <ul className={styles.list}>
-          {ALL_ARCHITECTURES.map((demo, index) => (
+          {ALL_ARCHITECTURES.map((demo) => (
             <li key={demo.id}>
               <button
                 type="button"
                 onClick={() => navigate(`/architecture/${demo.id}`)}
                 className={activeDemo?.id === demo.id ? `${styles.item} ${styles.itemActive}` : styles.item}
               >
-                <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
                 {demo.title}
               </button>
             </li>
@@ -42,7 +41,6 @@ export default function ArchitecturePage() {
 
       {activeDemo && (
         <div className={styles.main}>
-          <span className={styles.eyebrow}>§ Architecture Demo</span>
           <h2 className={styles.title}>{activeDemo.title}</h2>
           <p className={styles.description}>{activeDemo.description}</p>
           <DiagramCanvas
