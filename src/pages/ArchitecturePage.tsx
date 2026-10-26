@@ -6,6 +6,7 @@ import { ALL_ARCHITECTURES, getArchitectureById } from '../data/architectures';
 import { getServiceById } from '../data/services';
 import DiagramCanvas from '../components/Diagram/DiagramCanvas';
 import ServiceModal from '../components/ServiceModal/ServiceModal';
+import styles from './ArchitecturePage.module.css';
 
 export default function ArchitecturePage() {
   const { demoId } = useParams();
@@ -15,17 +16,23 @@ export default function ArchitecturePage() {
   const activeDemo = demoId ? getArchitectureById(demoId) : ALL_ARCHITECTURES[0];
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }} style={{ display: 'flex', gap: '1.5rem', padding: '1.5rem 2rem' }}>
-      <aside style={{ minWidth: 220 }}>
-        <h2>Architecture Demos</h2>
-        <ul style={{ listStyle: 'none', padding: 0 }}>
-          {ALL_ARCHITECTURES.map((demo) => (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+      className={styles.page}
+    >
+      <aside className={styles.sidebar}>
+        <div className={styles.sidebarTitle}>§ 14 Demos</div>
+        <ul className={styles.list}>
+          {ALL_ARCHITECTURES.map((demo, index) => (
             <li key={demo.id}>
               <button
                 type="button"
                 onClick={() => navigate(`/architecture/${demo.id}`)}
-                style={{ fontWeight: activeDemo?.id === demo.id ? 700 : 400 }}
+                className={activeDemo?.id === demo.id ? `${styles.item} ${styles.itemActive}` : styles.item}
               >
+                <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
                 {demo.title}
               </button>
             </li>
@@ -34,9 +41,10 @@ export default function ArchitecturePage() {
       </aside>
 
       {activeDemo && (
-        <div style={{ flex: 1 }}>
-          <h2>{activeDemo.title}</h2>
-          <p>{activeDemo.description}</p>
+        <div className={styles.main}>
+          <span className={styles.eyebrow}>§ Architecture Demo</span>
+          <h2 className={styles.title}>{activeDemo.title}</h2>
+          <p className={styles.description}>{activeDemo.description}</p>
           <DiagramCanvas
             demo={activeDemo}
             onSelectService={(id) => {

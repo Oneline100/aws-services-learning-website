@@ -1,0 +1,22 @@
+.header {
+  padding: 2rem 2rem 0;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0.3rem 0 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0.3rem 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}

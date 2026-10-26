@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import type { AWSService } from '../../types/service';
 import { ALL_SERVICES } from '../../data/services';
 import { filterServices } from '../../utils/search';
 import { handleIconError } from '../../utils/iconFallback';
+import { categoryColor } from '../../utils/categoryColor';
 import SearchBox from './SearchBox';
 import CategoryFilter from './CategoryFilter';
 import styles from './ServiceGrid.module.css';
@@ -26,17 +27,24 @@ export default function ServiceGrid({ onSelectService }: ServiceGridProps) {
       <div className={styles.toolbar}>
         <SearchBox value={query} onChange={setQuery} />
         <CategoryFilter selected={category} onSelect={setCategory} />
+        <span className={styles.count}>
+          {visibleServices.length} / {ALL_SERVICES.length} services
+        </span>
       </div>
       <div className={styles.grid}>
         {visibleServices.map((service, index) => (
           <motion.div
             key={service.id}
             className={styles.card}
+            style={{ '--accent': categoryColor(service.category) } as CSSProperties}
             onClick={() => onSelectService(service)}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25, delay: Math.min(index * 0.02, 0.4) }}
           >
+            <span className={styles.tag} aria-hidden="true">
+              {service.id}
+            </span>
             <img
               src={service.iconPath}
               alt={service.name}

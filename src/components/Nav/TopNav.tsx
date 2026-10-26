@@ -4,7 +4,10 @@ import styles from './TopNav.module.css';
 export default function TopNav() {
   return (
     <nav className={styles.nav}>
-      <span className={styles.title}>AWS Services Explorer</span>
+      <div className={styles.brand}>
+        <span className={styles.eyebrow}>§ EXAM PREP</span>
+        <span className={styles.title}>AWS Services Explorer</span>
+      </div>
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? `${styles.link} ${styles.linkActive}` : styles.link)}

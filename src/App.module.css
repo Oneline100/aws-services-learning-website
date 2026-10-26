@@ -1,15 +1,46 @@
+:global(:root) {
+  /* Blueprint — the core palette. Named, not improvised. */
+  --ink: #0b2545;       /* deep schematic navy — headers, dark surfaces */
+  --paper: #faf9f6;     /* warm sheet-paper background */
+  --graphite: #38424d;  /* body text */
+  --orange: #ff9900;    /* signal orange — the one saturated accent, spent on purpose */
+  --blueprint: #cbd9e8; /* hairlines, dot-grid, quiet borders */
+  --cyan: #0fb5ba;      /* circuit cyan — motion, links, animated data */
+
+  --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
 :global(body) {
   margin: 0;
-  font-family: 'Amazon Ember', 'Helvetica Neue', Arial, sans-serif;
-  background: #ffffff;
-  color: #16191f;
+  font-family: var(--font-body);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle, var(--blueprint) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-attachment: fixed;
+  color: var(--graphite);
 }
 
 :global(h1),
-:global(h2) {
-  color: #232f3e;
+:global(h2),
+:global(h3) {
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: -0.01em;
 }
 
 :global(button) {
   font-family: inherit;
+}
+
+:global(::selection) {
+  background: var(--orange);
+  color: var(--ink);
+}
+
+:global(:focus-visible) {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
 }

@@ -1,6 +1,8 @@
 import { Handle, Position, type NodeProps } from 'reactflow';
+import type { CSSProperties } from 'react';
 import { getServiceById } from '../../data/services';
 import { handleIconError } from '../../utils/iconFallback';
+import { categoryColor } from '../../utils/categoryColor';
 import styles from './DiagramCanvas.module.css';
 
 export interface ServiceNodeData {
@@ -13,8 +15,15 @@ export default function ServiceNode({ data }: NodeProps<ServiceNodeData>) {
   if (!service) return null;
 
   return (
-    <div className={styles.node} onClick={() => data.onSelect(data.serviceId)}>
+    <div
+      className={styles.node}
+      style={{ '--accent': categoryColor(service.category) } as CSSProperties}
+      onClick={() => data.onSelect(data.serviceId)}
+    >
       <Handle type="target" position={Position.Left} />
+      <span className={styles.nodeTag} aria-hidden="true">
+        {service.id}
+      </span>
       <img
         src={service.iconPath}
         alt={service.name}
