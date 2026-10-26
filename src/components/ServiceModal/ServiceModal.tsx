@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import type { AWSService } from '../../types/service';
 import { getServiceById } from '../../data/services';
+import { handleIconError } from '../../utils/iconFallback';
 import styles from './ServiceModal.module.css';
 
 interface ServiceModalProps {
@@ -30,7 +31,12 @@ export default function ServiceModal({ service, onClose, onNavigateToService }: 
             transition={{ duration: 0.2 }}
           >
             <div className={styles.header}>
-              <img src={service.iconPath} alt={service.name} className={styles.icon} />
+              <img
+                src={service.iconPath}
+                alt={service.name}
+                className={styles.icon}
+                onError={handleIconError}
+              />
               <div>
                 <h2>{service.name}</h2>
                 <p>{service.tagline}</p>

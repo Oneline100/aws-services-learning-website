@@ -80,7 +80,7 @@ export const MIGRATION_SERVICES: AWSService[] = [
     ],
     relatedServices: ['application-discovery-service', 'application-migration-service', 'dms'],
     pricingModel: 'AWS Migration Hub is offered at no additional charge; you pay only for the underlying migration tools and resources used.',
-    iconPath: './icons/migration/migration-hub.svg',
+    iconPath: './icons/migration/migration-hub.png',
   },
   {
     id: 'application-discovery-service',

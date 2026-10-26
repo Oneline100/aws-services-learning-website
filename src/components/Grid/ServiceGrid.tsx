@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import type { AWSService } from '../../types/service';
 import { ALL_SERVICES } from '../../data/services';
 import { filterServices } from '../../utils/search';
+import { handleIconError } from '../../utils/iconFallback';
 import SearchBox from './SearchBox';
 import CategoryFilter from './CategoryFilter';
 import styles from './ServiceGrid.module.css';
@@ -36,7 +37,12 @@ export default function ServiceGrid({ onSelectService }: ServiceGridProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25, delay: Math.min(index * 0.02, 0.4) }}
           >
-            <img src={service.iconPath} alt={service.name} className={styles.icon} />
+            <img
+              src={service.iconPath}
+              alt={service.name}
+              className={styles.icon}
+              onError={handleIconError}
+            />
             <span className={styles.name}>{service.name}</span>
           </motion.div>
         ))}
