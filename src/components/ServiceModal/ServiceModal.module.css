@@ -10,7 +10,7 @@
 }
 
 .panel {
-  background: #ffffff;
+  background: var(--surface);
   border-radius: 12px;
   max-width: 620px;
   width: 100%;
@@ -63,7 +63,7 @@
 
 .closeButton:hover {
   background: var(--paper);
-  color: var(--ink);
+  color: var(--text);
 }
 
 .body {
@@ -109,7 +109,7 @@
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--paper);
-  color: var(--ink);
+  color: var(--text);
   font-size: 0.82rem;
   cursor: pointer;
   transition: border-color 0.15s ease, background-color 0.15s ease;
@@ -117,7 +117,7 @@
 
 .relatedButton:hover {
   border-color: var(--orange);
-  background: #fff6e8;
+  background: rgba(255, 153, 0, 0.12);
 }
 
 .pricing {
@@ -125,5 +125,5 @@
   background: var(--paper);
   border-radius: 8px;
   padding: 0.85rem 1rem;
-  color: var(--ink);
+  color: var(--text);
 }

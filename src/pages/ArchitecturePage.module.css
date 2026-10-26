@@ -43,13 +43,13 @@
 }
 
 .item:hover {
-  background: var(--paper);
+  background: var(--surface);
 }
 
 .itemActive {
   border-left-color: var(--orange);
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--surface);
+  color: var(--text);
   font-weight: 600;
 }
 

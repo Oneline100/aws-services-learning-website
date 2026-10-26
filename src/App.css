@@ -1,10 +1,12 @@
 :root {
-  --ink: #16213f;        /* headings, nav */
-  --paper: #f7f8fa;      /* page background */
-  --graphite: #3f4756;   /* body text */
-  --orange: #ff9900;     /* one accent, used sparingly */
-  --border: #e3e7ed;     /* card/divider lines */
-  --muted: #7a8699;      /* secondary text */
+  --ink: #16213f;         /* fixed navy chrome — nav bar, active-pill fill */
+  --paper: #10131a;       /* page background + sunken/flush fills */
+  --surface: #1b1f29;     /* cards, panels, inputs — raised above the page */
+  --text: #e9ecf2;        /* headings, strong text */
+  --graphite: #c3c9d4;    /* body text */
+  --orange: #ff9900;      /* one accent, used sparingly */
+  --border: #2b313d;      /* card/divider lines */
+  --muted: #8d97a8;       /* secondary text */
 
   --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -20,7 +22,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-body);
-  color: var(--ink);
+  color: var(--text);
   font-weight: 700;
 }
 
