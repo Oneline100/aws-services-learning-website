@@ -27,14 +27,14 @@
   gap: 0.6rem;
   padding: 1.25rem 0.75rem 1rem;
   border: 1px solid var(--border);
-  border-top: 3px solid var(--accent, var(--border));
   border-radius: 10px;
   background: #ffffff;
   cursor: pointer;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
 }
 
 .card:hover {
+  border-color: var(--orange);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(22, 33, 63, 0.08);
 }

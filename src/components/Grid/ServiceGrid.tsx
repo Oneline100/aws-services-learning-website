@@ -1,10 +1,9 @@
-import { useMemo, useState, type CSSProperties } from 'react';
+import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import type { AWSService } from '../../types/service';
 import { ALL_SERVICES } from '../../data/services';
 import { filterServices } from '../../utils/search';
 import { handleIconError } from '../../utils/iconFallback';
-import { categoryColor } from '../../utils/categoryColor';
 import SearchBox from './SearchBox';
 import CategoryFilter from './CategoryFilter';
 import styles from './ServiceGrid.module.css';
@@ -36,7 +35,6 @@ export default function ServiceGrid({ onSelectService }: ServiceGridProps) {
           <motion.div
             key={service.id}
             className={styles.card}
-            style={{ '--accent': categoryColor(service.category) } as CSSProperties}
             onClick={() => onSelectService(service)}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
