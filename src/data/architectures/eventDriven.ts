@@ -6,10 +6,10 @@ export const EVENT_DRIVEN_DEMO: ArchitectureDemo = {
   description:
     'An application publishes domain events to EventBridge, which routes matching events to an SQS queue for durable buffered processing and to an SNS topic for fan-out notification, with a Lambda function consuming the queued messages.',
   nodes: [
-    { id: 'n1', serviceId: 'eventbridge', position: { x: 0, y: 150 } },
-    { id: 'n2', serviceId: 'sqs', position: { x: 300, y: 50 } },
-    { id: 'n3', serviceId: 'sns', position: { x: 300, y: 250 } },
-    { id: 'n4', serviceId: 'lambda', position: { x: 600, y: 50 } },
+    { id: 'n1', serviceId: 'eventbridge', position: { x: 0, y: 180 } },
+    { id: 'n2', serviceId: 'sqs', position: { x: 420, y: 40 } },
+    { id: 'n3', serviceId: 'sns', position: { x: 420, y: 320 } },
+    { id: 'n4', serviceId: 'lambda', position: { x: 840, y: 40 } },
   ],
   edges: [
     { id: 'e1', source: 'n1', target: 'n2', label: 'Route matched event to queue', animated: true },

@@ -7,9 +7,9 @@ export const CICD_DEMO: ArchitectureDemo = {
     'A developer pushes code to CodeCommit, which triggers CodePipeline to orchestrate the release: CodeBuild compiles and tests the code, and CodeDeploy rolls the resulting artifact out to target environments.',
   nodes: [
     { id: 'n1', serviceId: 'codecommit', position: { x: 0, y: 100 } },
-    { id: 'n2', serviceId: 'codepipeline', position: { x: 250, y: 100 } },
-    { id: 'n3', serviceId: 'codebuild', position: { x: 500, y: 100 } },
-    { id: 'n4', serviceId: 'codedeploy', position: { x: 750, y: 100 } },
+    { id: 'n2', serviceId: 'codepipeline', position: { x: 340, y: 100 } },
+    { id: 'n3', serviceId: 'codebuild', position: { x: 680, y: 100 } },
+    { id: 'n4', serviceId: 'codedeploy', position: { x: 1020, y: 100 } },
   ],
   edges: [
     { id: 'e1', source: 'n1', target: 'n2', label: 'Code push triggers pipeline', animated: true },
